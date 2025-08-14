@@ -71,7 +71,7 @@
 }
 
 .ps-header::after {
-    content: url("img/arrow-down.svg");
+    content: url("../img/arrow-down.svg");
     position: absolute;
     right: 20px;
     font-size: 18px;
@@ -116,5 +116,6 @@
     height: auto;
     object-fit: contain;
 }
-
 /* End Programing Skills */
+
+
