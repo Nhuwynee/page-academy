@@ -1,0 +1,120 @@
+/* Programing Skills */
+
+.programming-skills {
+    background: #F1F5F9;
+    padding: 40px 20px;
+}
+
+.ps-container {
+    position: relative;
+    margin-left: 30px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.ps-left {
+    width: 70%;
+    z-index: 1;
+    position: relative;
+}
+
+.ps-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.4px;
+    margin-bottom: 4%;
+    background: linear-gradient(180deg, #0A1D5F 0%, #3374F8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 68%;
+}
+
+.ps-title span {
+    color: #346DFF;
+}
+
+.ps-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+}
+
+.ps-item {
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(71, 85, 105, 0.15);
+    padding: 12px 0;
+}
+
+.ps-item:last-child {
+    border-bottom: none;
+}
+
+.ps-header {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    color: #1E293B;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.ps-header img {
+    margin-right: 20px;
+}
+
+.ps-header::after {
+    content: url("img/arrow-down.svg");
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.ps-item.active .ps-header::after {
+    transform: rotate(180deg);
+}
+
+.ps-content {
+    padding: 0 20px;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    color: #1E293B;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.ps-item.active .ps-content {
+    max-height: 200px;
+    padding: 0 20px 20px 55px;
+}
+
+.ps-right {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    width: 60%;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ps-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* End Programing Skills */
