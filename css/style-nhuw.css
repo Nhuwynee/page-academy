@@ -119,3 +119,74 @@
 /* End Programing Skills */
 
 
+
+/* ------------------------------------------------------- */
+/* Study Object */
+
+.target-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.target-image {
+    width: 50%;
+    height: auto;
+    flex: 1;
+    margin-left: 6%;
+}
+
+.target-list {
+    width: 100%;
+    padding-left: 20px;
+    list-style-type: none;
+    position: relative;
+    margin-left: -15%;
+    z-index: 2;
+}
+
+.target-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 10px;
+    color: var(--Sys-On-surface-on-surface, #1E293B);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.target-list li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.target-list li:nth-child(1) { padding-left: 10px; }
+.target-list li:nth-child(2) { padding-left: 50px; }
+.target-list li:nth-child(3) { padding-left: 90px; }
+.target-list li:nth-child(4) { padding-left: 50px; }
+.target-list li:nth-child(5) { padding-left: 10px; }
+
+.section-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background: linear-gradient(180deg, #0A1D5F 0%, #3374F8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 56px;
+}
+
+
+/* End Study Object */
+
+
