@@ -3,7 +3,13 @@
 .programming-skills {
     background: #F1F5F9;
     padding: 40px 20px;
-    margin-top: 60px;
+    margin-top: 60px !important;
+    max-width: 1552px;
+    margin: auto;
+}
+
+.ps-accordion {
+  height: 300px;
 }
 
 .ps-container {
@@ -11,7 +17,6 @@
     margin-left: 30px;
     display: flex;
     align-items: flex-start;
-    width: 100%;
 }
 
 .ps-left {
@@ -88,10 +93,11 @@
     line-height: 1.5;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    transition: max-height 0.3s ease-out, padding 0.4s ease;
     color: #1E293B;
     font-size: 16px;
     font-weight: 400;
+    
 }
 
 .ps-item.active .ps-content {
@@ -128,30 +134,39 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    margin-top: 60px !important;
+    margin-bottom: -3%;
+    max-width: 1552px;
+    margin: auto;
+    flex-direction: column;
 }
 
 .target-image {
-    width: 50%;
+    width: 80%;
     height: auto;
     flex: 1;
-    margin-left: 6%;
+    margin-left: 3%;
+    margin-top: -12%;
+}
+
+.tartget-description {
+    display: flex;
 }
 
 .target-list {
-    width: 100%;
     padding-left: 20px;
     list-style-type: none;
     position: relative;
     margin-left: -15%;
+    margin-top: 5%;
     z-index: 2;
+    width: 80%;
 }
 
 .target-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     padding: 10px;
     color: var(--Sys-On-surface-on-surface, #1E293B);
     font-family: Inter;
@@ -174,10 +189,6 @@
 .target-list li:nth-child(5) { padding-left: 10px; }
 
 .section-title {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 3;
     background: linear-gradient(180deg, #0A1D5F 0%, #3374F8 100%);
     background-clip: text;
@@ -188,14 +199,27 @@
 }
 
 
+
 /* End Study Object */
 
 /*-------------------------------------------------------- */
         /* Section chứa các khóa học */
 .course-section {
-  padding: 20px 50px;
-  text-align: center; 
-  font-family: Arial, sans-serif;
+    max-width: 1552px;
+    margin: auto;
+}
+
+.course-section h2, .course-section .course-container {
+    margin: 0 40px;
+}
+
+.background-course {
+  background: url("../img/background-courses.png") no-repeat center center;
+  background-size: contain;
+  min-height: 400px;
+  z-index: -1;
+  margin-top: -16.7%;
+  padding: 0;
 }
 
 .course-section h2 {
@@ -207,9 +231,9 @@
   font-weight: 700;
   font-style: normal;
   background: linear-gradient(180deg, #0A1D5F 0%, #3374F8 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .course-container {
@@ -249,6 +273,7 @@
   font-weight: 700;
   line-height: 120%;
   letter-spacing: 0.38px;
+  text-align: center;
 }
 
 .navigation {

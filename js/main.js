@@ -13,13 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-    });
-
-
-
-
-    //chuyển đổi ảnh file handleIamge.js
-    
+    }); 
 });
 
 
