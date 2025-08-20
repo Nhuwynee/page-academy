@@ -1,3 +1,4 @@
+// Như
 document.addEventListener('DOMContentLoaded', function() {
     const accordionItems = document.querySelectorAll('.ps-item');
     
@@ -14,6 +15,61 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }); 
+// end nhuw
+
+  const radios = document.querySelectorAll('input[name="course"]');
+  const select = document.getElementById("interest");
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.checked) {
+        select.value = radio.value;
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    });
+  });
+
+  select.addEventListener("change", () => {
+    const targetValue = select.value;
+    radios.forEach((radio) => {
+      radio.checked = radio.value === targetValue;
+    });
+  });
+
+  const dayInput = document.querySelectorAll(".day");
+  const hourInput = document.querySelectorAll(".hour");
+  const minuteInput = document.querySelectorAll(".minute");
+  const secondInput = document.querySelectorAll(".second");
+
+  const countDownDate = new Date("2025-12-01").getTime();
+
+  const countDownInterval = setInterval(() => {
+    function setContent(target, value) {
+      target.textContent = String(value).padStart(2, "0");
+    }
+
+    const now = new Date().getTime();
+
+    const distance = countDownDate - now;
+
+    if (distance <= 0) {
+      clearInterval(countDownInterval);
+      dayInput.forEach((day) => setContent(day, 0));
+      hourInput.forEach((hour) => setContent(hour, 0));
+      minuteInput.forEach((minute) => setContent(minute, 0));
+      secondInput.forEach((second) => setContent(second, 0));
+    }
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    dayInput.forEach((day) => setContent(day, days));
+    hourInput.forEach((hour) => setContent(hour, hours));
+    minuteInput.forEach((minute) => setContent(minute, minutes));
+    secondInput.forEach((second) => setContent(second, seconds));
+  }, 1000);
 });
-
-
