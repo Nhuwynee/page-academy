@@ -365,12 +365,9 @@ offer-countdown {
   max-width: 1552px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 40px;
-}
-
-.footer-logo {
-  flex: 1 1 200px;
+  max-width: 1552px;
 }
 
 .footer-logo img {
@@ -388,6 +385,13 @@ offer-countdown {
   width: 30px;
   height: 30px;
   margin-right: 8px;
+}
+
+.footer-content {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .footer-column {
@@ -420,11 +424,48 @@ offer-countdown {
 }
 
 .copyright {
+  width: 100%;
   padding-top: 100px;
   padding-left: 50px;
+  padding-right: 50px;
   font-size: 13px;
   color: #333;
+  text-decoration: underline;
 }
+
+/* Responsive footer */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .copyright {
+    padding-top: 50px;
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .copyright {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-logo img {
+    max-width: 250px;
+  }
+
+  .footer-column {
+    gap: 10px;
+  }
+}
+
 /* man hinh */
 /* ===========================================
    MEDIA QUERY CHUẨN RESPONSIVE
