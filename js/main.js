@@ -1,21 +1,21 @@
 // Như
-document.addEventListener('DOMContentLoaded', function() {
-    const accordionItems = document.querySelectorAll('.ps-item');
-    
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.ps-header');
-        
-        header.addEventListener('click', function() {
-            item.classList.toggle('active');
-            
-            accordionItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-        });
-    }); 
-// end nhuw
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll(".ps-item");
+
+  accordionItems.forEach((item) => {
+    const header = item.querySelector(".ps-header");
+
+    header.addEventListener("click", function () {
+      item.classList.toggle("active");
+
+      accordionItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
+    });
+  });
+  // end nhuw
 
   const radios = document.querySelectorAll('input[name="course"]');
   const select = document.getElementById("interest");
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const minuteInput = document.querySelectorAll(".minute");
   const secondInput = document.querySelectorAll(".second");
 
-  const countDownDate = new Date("2025-12-01").getTime();
+  let countDownDate = new Date().getTime() + 10 * 60 * 60 * 1000;
 
   const countDownInterval = setInterval(() => {
     function setContent(target, value) {
@@ -50,14 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const now = new Date().getTime();
 
-    const distance = countDownDate - now;
+    let distance = countDownDate - now;
 
     if (distance <= 0) {
-      clearInterval(countDownInterval);
-      dayInput.forEach((day) => setContent(day, 0));
-      hourInput.forEach((hour) => setContent(hour, 0));
-      minuteInput.forEach((minute) => setContent(minute, 0));
-      secondInput.forEach((second) => setContent(second, 0));
+      countDownDate = new Date().getTime() + 10 * 60 * 60 * 1000;
+      distance = countDownDate - now;
     }
 
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
