@@ -17,7 +17,7 @@
 .main-header {
   padding-top: 15px;
   width: 100%;
-  
+
   height: 100px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -357,11 +357,11 @@ offer-countdown {
   background-color: #e4ecfb;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
-  max-width: 1552px;
   margin: auto;
 }
 
 .footer-container {
+  max-width: 1552px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -719,11 +719,10 @@ offer-countdown {
   }
 }
 
-
 @media (max-width: 376px) {
   /* Header */
   .main-header {
-     height: auto;
+    height: auto;
     padding: 0.25rem 0.5vw; /* Nhỏ hơn và responsive hơn */
     flex-shrink: 1;
   }
@@ -786,7 +785,6 @@ offer-countdown {
     padding: 0 0.5rem; /* Thêm padding nhẹ */
     display: flex;
     justify-content: center;
-   
   }
 
   /* Box giá và countdown */
@@ -806,16 +804,15 @@ offer-countdown {
     padding: 10px;
   }
 
-  .content-right .offer-box .offer-title{
+  .content-right .offer-box .offer-title {
     padding: 10px;
-  
+
     font-size: 11.726px; /* Tăng từ 10px */
   }
   .price-sale .offer-price {
     font-size: 25.779px; /* ~19px - giảm từ 20px */
     font-weight: bold;
     padding-left: 10px;
-
   }
   .price-sale .old-price {
     font-size: 12px; /* ~19px - giảm từ 20px */
@@ -841,7 +838,6 @@ offer-countdown {
     align-items: center; /* Đổi thành center */
     width: 100%;
     height: auto; /* Thay đổi từ 80% */
-
   }
 
   .countdown {
@@ -903,10 +899,6 @@ offer-countdown {
     justify-content: center;
   }
 }
-
-
-
-
 
 /* minh-end */
 
