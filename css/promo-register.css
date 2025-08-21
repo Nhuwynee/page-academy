@@ -320,4 +320,9 @@
     font-size: 12px;
     width: 100px;
   }
+
+  .field button {
+    height: 40px;
+    font-size: 20px;
+  }
 }
