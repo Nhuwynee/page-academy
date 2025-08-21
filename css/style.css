@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* logo trái, button phải */
-  width: 300px;  /* tùy chỉnh */
+  width: 300px; /* tùy chỉnh */
 }
 /* Logo */
 .logo_techzen img {
@@ -78,7 +78,6 @@
   height: 40px;
 }
 .icon-social {
-
   display: flex;
   gap: 10px;
 }
@@ -134,7 +133,6 @@
 .btn-signup:hover {
   background-color: #0f5bbd;
 }
-
 
 /* ===== MAIN CONTENT ===== */
 .main-content {
@@ -355,45 +353,46 @@ offer-countdown {
 }
 /*footer*/
 .footer {
-  background-color: #E4ECFB;
-  padding: 30px 20px;
+  background-color: #e4ecfb;
+  padding: 40px 20px;
   font-family: Arial, sans-serif;
   max-width: 1552px;
   margin: auto;
 }
 
 .footer-container {
-  max-width: 1200px;
-  height: 300px;
   margin: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .footer-logo {
   flex: 1 1 200px;
-  padding: 0 30px;
 }
 
 .footer-logo img {
   max-width: 500px;
 }
 .footer-logo .logo-techzen {
-  width: 300px;
+  width: 435px;
 }
 
 .social-icons {
-  margin: 10px 0;
+  margin: 30px 0;
 }
 
 .social-icons a img {
-  width: 25px;
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
 }
 
 .footer-column {
   flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .footer-column h4 {
@@ -419,7 +418,8 @@ offer-countdown {
 }
 
 .copyright {
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-left: 50px;
   font-size: 13px;
   color: #333;
 }
@@ -444,7 +444,7 @@ offer-countdown {
     border-radius: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
-    color: inherit; 
+    color: inherit;
     text-decoration: none;
     height: 40px;
     margin-left: -100px;
@@ -473,7 +473,7 @@ offer-countdown {
   }
   .content-left,
   .content-right {
-    padding: 20px ;
+    padding: 20px;
     width: 50%;
     min-width: 0;
     max-width: unset;
@@ -484,14 +484,15 @@ offer-countdown {
     height: auto;
     padding: 30px;
   }
-  .offer-box .offer-title,.countdown ,.slots-left{
+  .offer-box .offer-title,
+  .countdown,
+  .slots-left {
     width: 100%;
     height: auto;
     padding: 20px;
     min-width: 0;
   }
 }
-
 
 /* Responsive cho màn hình <= 1024px */
 @media (max-width: 1024px) {
@@ -521,16 +522,16 @@ offer-countdown {
     max-width: none;
     min-width: 0;
   }
-    .content-right {
-        width: 900px;
-        max-width: none;
-        min-width: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-    }
+  .content-right {
+    width: 900px;
+    max-width: none;
+    min-width: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
   .content-left .line-highlight {
-    font-size: 45px;   /* nhỏ hơn chữ mặc định */
+    font-size: 45px; /* nhỏ hơn chữ mặc định */
     font-weight: 600;
     line-height: 1.5;
   }
@@ -544,13 +545,13 @@ offer-countdown {
     font-size: 12px;
     gap: 10px;
   }
-.price-countdown-wrapper {
+  .price-countdown-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
     margin-bottom: 20px;
-}
+  }
   .price-sale,
   .countdown {
     display: flex;
@@ -573,147 +574,147 @@ offer-countdown {
     display: block;
     margin-top: 10px; /* cách một chút cho đẹp */
   }
-  .content-right .price-sale{
+  .content-right .price-sale {
     flex-direction: column;
     align-items: flex-start;
   }
-  .btn-group{
+  .btn-group {
     width: 50%;
     display: flex;
     gap: 10px;
   }
-  .btn-group .btn-primary,.btn-outline{
+  .btn-group .btn-primary,
+  .btn-outline {
     border-radius: 30px;
   }
-  
 }
 
 @media (max-width: 786px) {
   /* Header */
-.main-header {
+  .main-header {
     height: auto;
     padding: 8px 1vw;
-}
+  }
 
-.nav-menu,
-.icon-social,
-.btn-signup {
+  .nav-menu,
+  .icon-social,
+  .btn-signup {
     flex-shrink: 1; /* Cho phép co nhỏ */
-}
+  }
 
-/* Nội dung chính */
-.main-content {
+  /* Nội dung chính */
+  .main-content {
     flex-direction: column;
     gap: 20px;
     padding: 16px 1vw 8px;
     margin-top: 72px;
     height: unset;
-}
+  }
 
-.content-left {
+  .content-left {
     width: 100%;
     max-width: none;
     min-width: 0;
-    flex-direction: column;   /* xếp theo chiều dọc */
-    align-items: center;      /* căn giữa ngang */
-    justify-content: center; 
+    flex-direction: column; /* xếp theo chiều dọc */
+    align-items: center; /* căn giữa ngang */
+    justify-content: center;
     text-align: center; /* căn giữa dọc */
-}
+  }
 
-.content-right {
+  .content-right {
     width: 100%; /* Thay đổi từ 900px thành 100% */
     max-width: none;
     min-width: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-}
+  }
 
-.content-left .line-highlight {
+  .content-left .line-highlight {
     font-size: 40px;
     font-weight: 600;
     line-height: 1.5;
-    align-items: center;/*ko nhan*/
-}
+    align-items: center; /*ko nhan*/
+  }
 
-.content-left .description {
+  .content-left .description {
     font-size: 14px;
     line-height: 1.4;
     padding-top: 20px;
-}
+  }
 
-.content-left .course-info {
+  .content-left .course-info {
     font-size: 12px;
     gap: 10px;
     align-items: center;
-}
+  }
 
-/* THAY ĐỔI: Bố cục dọc thay vì ngang */
-.price-countdown-wrapper {
+  /* THAY ĐỔI: Bố cục dọc thay vì ngang */
+  .price-countdown-wrapper {
     display: flex;
     flex-direction: column; /* Chuyển thành dọc */
     gap: 20px;
     margin-bottom: 20px;
-}
+  }
 
-.content-right{
-  height: 50%;
-}
-.price-sale {
+  .content-right {
+    height: 50%;
+  }
+  .price-sale {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     width: 70%; /* Chiếm full width */
-}
+  }
 
-.offer-countdown {
+  .offer-countdown {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Căn trái countdown */
     width: 100%; /* Chiếm full width */
     height: 80%;
-}
+  }
 
-.countdown {
+  .countdown {
     display: flex;
     justify-content: left; /* Căn giữa các time-box */
     gap: 60px;
     flex-wrap: nowrap;
-}
-.countdown .time-box small{
+  }
+  .countdown .time-box small {
     flex: 1; /* Thay width cố định bằng flex */
     max-width: 80px;
     font-size: 20px;
     text-align: center;
     margin-bottom: 30px;
     margin-top: -30px;
-}
-.countdown .time-box span {
+  }
+  .countdown .time-box span {
     display: block;
     font-size: 50px;
     font-weight: bold;
     color: #333; /* Thêm màu cụ thể */
     padding-left: -5px;
-}
+  }
 
-/* Slots nằm dưới countdown */
-.slots-left {
+  /* Slots nằm dưới countdown */
+  .slots-left {
     display: block;
     text-align: left; /* Căn giữa text */
     margin-top: -50px; /* cách một chút cho đẹp */
-}
+  }
 
-.btn-group {
+  .btn-group {
     width: 70%; /* Thay đổi từ 50% thành 100% */
     display: flex;
     gap: 10px;
-}
+  }
 
-.btn-group .btn-primary,
-.btn-group .btn-outline {
+  .btn-group .btn-primary,
+  .btn-group .btn-outline {
     border-radius: 30px;
-}
+  }
 }
 @media (max-width: 375px) {
   /* Header */
@@ -744,9 +745,9 @@ offer-countdown {
   .content-left {
     width: 100%;
     display: flex;
-    flex-direction: column;   /* xếp theo chiều dọc */
-    align-items: center;      /* căn giữa ngang */
-    justify-content: center;  /* căn giữa dọc */
+    flex-direction: column; /* xếp theo chiều dọc */
+    align-items: center; /* căn giữa ngang */
+    justify-content: center; /* căn giữa dọc */
   }
 
   .content-left .line-highlight {
@@ -760,7 +761,7 @@ offer-countdown {
     font-size: 20px;
     line-height: 1.4;
     padding-top: 20px;
-    text-align: left;   /* căn lề trái */
+    text-align: left; /* căn lề trái */
   }
 
   .content-left .course-info {
@@ -845,8 +846,6 @@ offer-countdown {
     border-radius: 30px;
   }
 }
-
-
 
 /* minh-end */
 
