@@ -41,7 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const minuteInput = document.querySelectorAll(".minute");
   const secondInput = document.querySelectorAll(".second");
 
-  let countDownDate = new Date().getTime() + 10 * 60 * 60 * 1000;
+  let countDownDate = localStorage.getItem("countDownDate");
+
+  if (!countDownDate) {
+    countDownDate = new Date().getTime() + 10 * 60 * 60 * 1000;
+    localStorage.setItem("countDownDate", countDownDate);
+  } else {
+    countDownDate = parseInt(countDownDate, 10);
+  }
 
   const countDownInterval = setInterval(() => {
     function setContent(target, value) {
@@ -49,12 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const now = new Date().getTime();
-
-    let distance = countDownDate - now;
+    const distance = countDownDate - now;
 
     if (distance <= 0) {
       countDownDate = new Date().getTime() + 10 * 60 * 60 * 1000;
-      distance = countDownDate - now;
+      localStorage.setItem("countDownDate", countDownDate);
     }
 
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
