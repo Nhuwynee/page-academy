@@ -254,7 +254,7 @@
 
 @media screen and (max-width: 500px) {
   .promo-register {
-    max-width: 343px;
+    min-width: 300px;
     padding: 0;
   }
 
