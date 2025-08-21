@@ -1,5 +1,5 @@
 .banner2 {
-  margin: 0px 30px ;
+  margin: 0px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -82,7 +82,7 @@
   background: #eaf4ff;
   border-radius: 0px 0px 24px 24px;
   z-index: -1;
-  margin: -50px auto 0px;
+  margin: -20px auto 0px;
   max-width: 1552px;
 }
 
