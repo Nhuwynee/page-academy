@@ -157,6 +157,7 @@
   color: rgb(0, 0, 0);
   position: relative;
   z-index: 1; /* Đặt z-index để đảm bảo nó nằm trên các phần tử khác */
+  margin-left: -10px;
 }
 
 .content-left {
