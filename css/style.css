@@ -142,9 +142,9 @@
   margin: 100px auto 0px; /* Sử dụng auto để center, thay vì 50px 80px */
   display: flex;
   gap: 30px;
-  align-items: flex-start;
+  align-items: center;
   min-height: 500px; /* Thêm chiều cao tối thiểu */
-  align-items: center; /* Căn giữa chiều dọc */
+  padding: 0 20px;
   justify-content: space-between; /* Căn ngang: giữ khoảng cách giữa trái và phải */
   height: 200%;
 
@@ -157,7 +157,7 @@
   color: rgb(0, 0, 0);
   position: relative;
   z-index: 1; /* Đặt z-index để đảm bảo nó nằm trên các phần tử khác */
-  margin-left: -10px;
+
 }
 
 .content-left {
@@ -429,7 +429,7 @@ offer-countdown {
 /* ===========================================
    MEDIA QUERY CHUẨN RESPONSIVE
 =========================================== */
-@media (max-width: 1281px) {
+@media (max-width: 1280px) {
   .nav-menu {
     display: flex;
     gap: 20px;
@@ -475,7 +475,7 @@ offer-countdown {
   }
   .content-left,
   .content-right {
-    padding: 20px;
+    padding: 35px;
     width: 50%;
     min-width: 0;
     max-width: unset;
@@ -486,9 +486,16 @@ offer-countdown {
     height: auto;
     padding: 30px;
   }
+  .time-box span{
+    padding: 20px;
+  }
+  .slots-left{
+    margin: 20px 0;
+    font-size: 16px;
+    padding-bottom: 30px;
+  }
   .offer-box .offer-title,
-  .countdown,
-  .slots-left {
+  .countdown {
     width: 100%;
     height: auto;
     padding: 20px;
@@ -498,33 +505,37 @@ offer-countdown {
 
 /* Responsive cho màn hình <= 1024px */
 @media (max-width: 1025px) {
-  /* Header */
+  /* Header - giảm kích thước */
   .main-header {
     height: auto;
-    padding: 8px 1vw;
+    padding: 4px 0.5vw; /* Giảm từ 8px 1vw */
     flex-shrink: 1;
   }
 
   .nav-menu,
   .icon-social,
   .btn-signup {
-    flex-shrink: 1; /* Cho phép co nhỏ */
+    flex-shrink: 1;
+    font-size: 0.9rem; /* Thêm giảm font-size */
   }
 
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
     gap: 20px;
-    padding: 16px 1vw 8px;
-    margin-top: 72px;
+    padding: 16px 1vw 40px;
+    margin-top: 60px; /* Giảm từ 72px vì header nhỏ hơn */
     height: unset;
   }
+
+  
 
   .content-left {
     width: 100%;
     max-width: none;
     min-width: 0;
   }
+  
   .content-right {
     width: 900px;
     max-width: none;
@@ -533,83 +544,150 @@ offer-countdown {
     display: flex;
     justify-content: center;
   }
+  
   .content-left .line-highlight {
-    font-size: 45px; /* nhỏ hơn chữ mặc định */
+    font-size: 45px;
     font-weight: 600;
     line-height: 1.5;
   }
+  
   .content-left .description {
-    font-size: 14px;
+    width: 50%;
+    font-size: 18px;
     line-height: 1.4;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: -10px;
   }
   .content-left .course-info {
-    font-size: 12px;
+    font-size: 16px;
     gap: 10px;
+    color: #666;
+
   }
+  
+  /* Price-countdown-wrapper giảm khoảng cách */
   .price-countdown-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px; /* Giảm từ 20px */
     margin-bottom: 20px;
   }
+  
   .price-sale,
   .countdown {
     display: flex;
     align-items: center;
   }
 
+  /* Price-sale canh giữa với gap 10px */
   .price-sale {
-    justify-content: flex-start;
-    gap: 15px;
+    justify-content: center; /* Đổi từ flex-start thành center */
+    gap: 10px; /* Giảm từ 15px */
   }
 
+  /* Countdown bỏ margin */
   .countdown {
     justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: nowrap; /* để nằm 1 hàng */
+    flex-wrap: nowrap;
+    margin: 0; /* Thêm để bỏ margin */
+    padding-top: 0;
   }
 
   /* Slots nằm dưới countdown */
   .slots-left {
     display: block;
-    margin-top: 10px; /* cách một chút cho đẹp */
+    position: static; /* Đổi từ absolute */
+    margin-top: -20px; /* Giảm từ -60px và bỏ âm */
   }
+  
   .content-right .price-sale {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Đổi từ flex-start thành center */
+    gap: 10px; /* Thêm gap để đồng nhất */
   }
+  
   .btn-group {
     width: 50%;
     display: flex;
     gap: 10px;
   }
+  
   .btn-group .btn-primary,
   .btn-outline {
     border-radius: 30px;
   }
 }
 
-@media (max-width: 787px) {
-  /* Header */
+
+ @media (max-width: 768px) {
+  /* Header responsive */
   .main-header {
     height: auto;
-    padding: 8px 1vw;
+    padding: 0.5rem 3vw; /* Sử dụng rem và tăng padding ngang */
+    min-height: 50px; /* Đặt chiều cao tối thiểu */
+    align-items: center;
   }
 
+  /* Navigation elements */
   .nav-menu,
   .icon-social,
   .btn-signup {
-    flex-shrink: 1; /* Cho phép co nhỏ */
+    flex-shrink: 1;
+    font-size: 0.85rem;
   }
+
+  /* Responsive navigation */
+  .nav-menu {
+    gap: 0.8rem; /* Giảm gap giữa menu items */
+    flex-wrap: wrap; /* Cho phép xuống hàng */
+  }
+
+  .nav-item {
+    padding: 0.25rem 0.5rem; /* Giảm padding nav items */
+  }
+
+  /* Compact button */
+  .btn-signup {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    min-width: 60px; /* Đặt chiều rộng tối thiểu */
+    white-space: nowrap; /* Không cho text xuống hàng */
+  }
+
+  /* Social icons optimization */
+  .icon-social {
+    gap: 0.75rem;
+    flex-shrink: 2; /* Cho phép co nhiều hơn */
+    margin-left: -30px;
+  }
+
+  .icon-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon-social img,
+  .icon-social svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Logo adjustment (nếu có) */
+  .logo {
+    height: 30px; /* Giảm kích thước logo */
+    flex-shrink: 0; /* Logo không co */
+  }
+
 
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
     gap: 20px;
-    padding: 16px 1vw 8px;
+    padding: 16px 1vw 40px;
     margin-top: 72px;
     height: unset;
   }
@@ -634,22 +712,26 @@ offer-countdown {
   }
 
   .content-left .line-highlight {
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 700;
     line-height: 1.5;
     align-items: center; /*ko nhan*/
+   
   }
 
   .content-left .description {
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1.4;
     padding-top: 20px;
+     width: 600px;
   }
 
   .content-left .course-info {
-    font-size: 12px;
+    font-size: 16px;
     gap: 10px;
-    align-items: center;
+    display: flex;
+  align-items: center;      /* Căn giữa dọc */
+  justify-content: center;  /* Căn giữa ngang */
   }
 
   /* THAY ĐỔI: Bố cục dọc thay vì ngang */
@@ -662,6 +744,7 @@ offer-countdown {
 
   .content-right {
     height: 50%;
+    width: 95%;
   }
   .price-sale {
     display: flex;
@@ -669,6 +752,15 @@ offer-countdown {
     align-items: flex-start;
     gap: 8px;
     width: 70%; /* Chiếm full width */
+    padding-left: 5px; /* Canh trái cách 10px */
+}
+.price-sale .offer-price{
+    align-self: flex-start;
+    padding-left: 10px;
+}
+.price-sale .old-price {
+     align-self: flex-start;
+    padding-left: 10px;
   }
 
   .offer-countdown {
@@ -679,30 +771,40 @@ offer-countdown {
     height: 80%;
   }
 
-  .countdown {
-    display: flex;
-    justify-content: left; /* Căn giữa các time-box */
-    gap: 60px;
-    flex-wrap: nowrap;
-  }
-  .countdown .time-box small {
-    flex: 1; /* Thay width cố định bằng flex */
-    max-width: 80px;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: -30px;
-  }
-  .countdown .time-box span {
-    display: block;
-    font-size: 50px;
-    font-weight: bold;
-    color: #333; /* Thêm màu cụ thể */
-    padding-left: -5px;
-  }
+ .countdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  height: 90%;
+  transform: translateX(-20px); /* dịch sang trái 20px */
+}
+
+.countdown .time-box {
+  display: flex;
+  flex-direction: column; /* cho small + span xếp dọc */
+  align-items: center;    /* canh giữa nội dung bên trong */
+  justify-content: center;
+}
+
+.countdown .time-box small {
+  font-size: 20px;
+  text-align: center;
+  margin-top: -30px;              /* bỏ margin thừa */
+}
+
+.countdown .time-box span {
+  font-size: 60px;
+  font-weight: bold;
+  color: #333;
+  padding-left: 40px;
+  margin-top: -30px;              /* bỏ margin thừa */
+}
+
 
   /* Slots nằm dưới countdown */
   .slots-left {
+    font-size: 20px;
     display: block;
     text-align: left; /* Căn giữa text */
     margin-top: -50px; /* cách một chút cho đẹp */
@@ -721,16 +823,49 @@ offer-countdown {
 }
 
 @media (max-width: 376px) {
-  /* Header */
   .main-header {
+    width: 100%;         /* luôn chiếm đủ chiều ngang */
+    padding: 0.5rem 1rem; /* giảm padding */
+    min-height: 50px;
+    align-items: center;
+    box-sizing: border-box; /* đảm bảo padding tính trong width */
+    overflow-x: hidden;     /* ngăn tràn ngang */
+  }
+  .logo_techzen {
+    width: 60%; /* Chiếm hết chiều ngang */
+  
+  }
+  .logo_techzen img{
+    max-width: 50%;
     height: auto;
-    padding: 0.25rem 0.5vw; /* Nhỏ hơn và responsive hơn */
-    flex-shrink: 1;
+  }
+  .menu-toggle {
+    font-size: 20px;
+    
+ 
+  }
+  .btn-signup{
+    width: 130%;
+    height: 130%;
+  }
+  .btn-signup h1{
+    font-size: 10px;
   }
 
-  .nav-menu,
+  .nav-menu {
+    gap: 0.5rem;       /* giảm gap */
+    flex-wrap: wrap;   /* cho xuống hàng khi hẹp */
+  }
+
+  .icon-social {
+    margin-left: 0;    /* bỏ margin âm gây tràn */
+    gap: 0.5rem;
+  }
+
   .btn-signup {
-    flex-shrink: 1;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    min-width: auto;   /* bỏ min-width cứng nếu gây tràn */
   }
 
   .nav-menu,
@@ -745,7 +880,7 @@ offer-countdown {
     margin-top: 60px; /* Giảm từ 72px */
     height: unset;
     width: 100%;
-    padding: 1.5rem 0.5rem; /* Thêm padding để tránh sát mép */
+    padding: 1.5rem 0.5rem 40px; /* Thêm padding để tránh sát mép */
   }
 
   .content-left {
@@ -759,7 +894,7 @@ offer-countdown {
 
   .content-left .line-highlight {
     font-size: 1.4rem; /* ~22.4px - dùng rem thay px */
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.4; /* Giảm line-height cho gọn */
     text-align: center;
     margin-bottom: 0.5rem; /* Thêm margin */
@@ -842,42 +977,49 @@ offer-countdown {
   }
 
   .countdown {
-    display: flex;
-    justify-content: center; /* Đổi thành center */
-    gap: 1rem; /* Giảm từ 30px */
-    flex-wrap: nowrap;
-    margin: 0px 0px 10px 10px;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; /* canh các box về phía trên */
+  gap: 10px;               /* khoảng cách giữa các box */
+  transform: translateX(-20px); /* dịch cả countdown sang trái 20px */
+}
 
-  .countdown .time-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 60px; /* Giảm từ 80px */
-  }
+.countdown .time-box {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;  /* ✅ canh trái */
+  justify-content: flex-start;
+  gap: 2px;                /* ✅ khoảng cách nhỏ giữa span và small */
+  min-width: 40px;         /* tùy chỉnh để không quá rộng */
+}
 
-  .countdown .time-box small {
-    font-size: 7.725px; /* Sửa lỗi "15  px" */
-    text-align: center;
-    color: #666;
-    margin: 0;
-  }
+.countdown .time-box span {
+  font-size: 18px;         
+  font-weight: bold;
+  color: #333;
+  line-height: 1.1;        /* ✅ giúp span + small gần nhau */
+  margin: 0;
+  padding: 0;              /* bỏ padding trái */
+}
 
-  .countdown .time-box span {
-    display: block;
-    font-size: 23.176px; /* ~40px - giảm từ 60px */
-    font-weight: bold;
-    color: #333;
-    line-height: 1;
-  }
+.countdown .time-box small {
+  font-size: 10px;
+  color: #666;
+  line-height: 1;
+  margin-top: -20px;               /* bỏ margin âm */
+ 
+}
 
-  /* Slots */
-  .slots-left {
-    display: block;
-    text-align: left; /* Đổi thành center */
-    font-size: 12px;
-    padding: 0.5rem 0; /* Giảm từ 10px */
-  }
+.slots-left {
+  display: block;
+  text-align: left;
+  font-size: 8px;
+  padding: 0;
+  padding-top: 25px;
+  transform: translateX(0); /* reset lại */
+  align-self: flex-start;   /* đảm bảo nằm sát trái */
+}
+
 
   /* Buttons */
   .btn-group {
