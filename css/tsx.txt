@@ -1,0 +1,340 @@
+/* Thủy */
+.roadmap-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.roadmap-1 h1 {
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #0a1d5f, #3374f8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.roadmap-1 .timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  border: 2px solid #3375fb;
+  border-radius: 50px;
+  padding: 14px 24px;
+  background: white;
+  color: #1b7bf3;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.step.active {
+  background: var(--Sys-Primary-primary, #1b7bf3);
+  color: white;
+  box-shadow: 0 4px 12px rgba(27, 123, 243, 0.3);
+}
+
+.step:hover {
+  background: var(--Sys-Primary-primary, #1b7bf3);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 123, 243, 0.3);
+}
+
+.desc {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Roadmap-2 - Timeline chi tiết */
+.roadmap-2 .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 60px;
+}
+
+/* Đường thẳng dọc chính - bắt đầu từ item đầu tiên */
+.roadmap-2 .timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -35px;
+  bottom: -120px;
+  width: 4px;
+  background: #2352bc;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 120px;
+  position: relative;
+  min-height: 300px;
+}
+
+/* Nút tròn giữa timeline */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50.2%;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 34.965px;
+  height: 34.965px;
+  background: linear-gradient(to right, #0a1d5f, #3374f8);
+  border-radius: 50%;
+}
+
+/* Week label ở giữa timeline */
+.timeline-item .week-label {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  z-index: 4;
+  background: #e8f0ff;
+  color: #1a4fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Thêm week label cho từng timeline item */
+.timeline-item:nth-child(1)::after {
+  content: "Tuần 1-7";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: #e8f0ff;
+  color: #2352bc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.timeline-item:nth-child(2)::after {
+  content: "Tuần 8-10";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: #e8f0ff;
+  color: #2352bc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.timeline-item:nth-child(3)::after {
+  content: "Tuần 11-16";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: #e8f0ff;
+  color: #2352bc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.timeline-item:nth-child(4)::after {
+  content: "Tuần 17-22";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: #e8f0ff;
+  color: #2352bc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.timeline-item:nth-child(5)::after {
+  content: "Tuần 23-26";
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: #e8f0ff;
+  color: #2352bc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Bên trái */
+.timeline-left {
+  width: 55%;
+  padding-right: 70px;
+}
+
+.timeline-left h3 {
+  color: var(--Sys-On-surface-on-surface-sub, #475569);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: var(--font-Inter, Inter);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.15px;
+}
+
+.timeline-left strong {
+  color: var(--Sys-On-surface-on-surface, #1e293b);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: var(--font-Inter, Inter);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.timeline-left img {
+  position: relative;
+  left: 80px;
+  border-radius: 50%;
+  margin-top: 40px;
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  flex-shrink: 0;
+  aspect-ratio: 74/75;
+}
+
+/* Bên phải */
+.timeline-right {
+  width: 45%;
+  padding-left: 22px;
+  text-align: left;
+  mask: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Bỏ hiệu ứng mask khi expanded */
+.timeline-right.expanded {
+  mask: none;
+  -webkit-mask: none;
+}
+
+/* Thêm transition mượt */
+.timeline-right {
+  transition: all 0.3s ease;
+}
+
+.aligned-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.aligned-list li {
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+h3 {
+  margin: 10px 0;
+  color: black;
+  font-size: 1.2em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 8px;
+  color: var(--Sys-On-surface-on-surface-sub, #475569);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.15px;
+}
+
+strong {
+  color: var(--Sys-On-surface-on-surface-sub, #475569);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-toggle button {
+  border-radius: 8px;
+  border: 1px solid var(--Sys-Primary-primary, #1b7bf3);
+  background: var(--Sys-Primary-on-primary, #fff);
+  color: var(--Sys-Primary-primary, #1b7bf3);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition-duration: 0.6s;
+}
+
+.timeline-toggle button:hover {
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+}
+
+.roadmap-2 .timeline-item {
+  scroll-behavior: smooth;
+  scroll-margin-top: 165px;
+}
+
+.roadmap-2 .timeline.collapsed .timeline-item:not(:first-child) {
+  display: none;
+}
+
+.roadmap-2 .timeline.collapsed {
+  max-height: 1050px;
+}
+
+.roadmap-2 .timeline {
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+  max-height: 4100px;
+  scroll-margin-top: 120px;
+}
