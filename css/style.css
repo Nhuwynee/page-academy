@@ -229,6 +229,7 @@
   border-radius: 10px;
   padding: 5px 15px;
   height: 150px;
+
 }
 
 .price-sale .offer-price {
@@ -247,13 +248,15 @@
   /* margin-bottom: 3px; */
   text-decoration: line-through;
 }
-offer-countdown {
+.offer-countdown {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Thêm khoảng cách giữa countdown và slots */
-  margin-top: 20px; /* Thêm khoảng cách trên */
+  align-items: flex-start;
+  justify-content: left;
+  width: 100%;
+  height: 80%;
+  padding-top: 10px;
+  gap: 20px;
 }
 /* Countdown */
 .countdown {
@@ -578,7 +581,7 @@ offer-countdown {
   }
   
   .content-right {
-    width: 900px;
+    width: 100%;
     max-width: none;
     min-width: 0;
     padding: 0;
@@ -615,7 +618,7 @@ offer-countdown {
     gap: 10px; /* Giảm từ 20px */
     margin-bottom: 20px;
   }
-  
+
   .price-sale,
   .countdown {
     display: flex;
@@ -647,22 +650,51 @@ offer-countdown {
   .content-right .price-sale {
     flex-direction: column;
     align-items: center; /* Đổi từ flex-start thành center */
+   justify-content: center;  
     gap: 10px; /* Thêm gap để đồng nhất */
+
+
+  }
+  .price-sale .offer-price{
+    font-size: 40px;
+  }
+  .price-sale .old-price {
+    font-size: 20px;
   }
   .content-right .old-price {
-    align-self: flex-start;
+  align-self: flex-start;
+
   margin-left: 0;
   padding-left: 0;
   text-align: left; /* đảm bảo text bám lề trái */
   display: block;   /* nếu đang inline thì block để dễ canh */
+  padding-left: 15px;
 }
+.price-sale{
+  width: 100%;
+      justify-content: flex-start; /* thay vì center */
+    align-items: flex-start;     /* canh trên - trái */
+}
+ .price-sale .offer-price {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    display: block;
+    align-self: flex-start; /* ép nó bám lề trái */
+  }
+  .price-sale .old-price {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    display: block;
+    align-self: flex-start; /* ép nó bám lề trái */
+  }
 
-  
   .btn-group {
     width: 50%;
     display: flex;
     gap: 10px;
-    padding-left: 20px;
+    padding: 0 1rem; /* Thêm padding */
   }
   
   .btn-group .btn-primary,
