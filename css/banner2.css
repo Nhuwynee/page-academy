@@ -151,9 +151,9 @@
 }
 
 @media screen and (max-width: 500px) {
-  .banner2 {
+  /* .banner2 {
     margin: 0px 30px 24px;
-  }
+  } */
 
   .banner2-top {
     padding: 20px 18px;
