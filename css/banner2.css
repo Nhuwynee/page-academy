@@ -1,5 +1,5 @@
 .banner2 {
-  margin: 0px 30px 80px;
+  /* margin: 0px 20px; */
   display: flex;
   flex-direction: column;
 }
@@ -12,8 +12,9 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  margin: 0px auto;
+  margin: -30px auto 0px;
   max-width: 1552px;
+  z-index: 2;
 }
 
 .banner2-top-title {
@@ -27,14 +28,14 @@
 
 .banner2-top-content {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   padding: 0 4px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .banner2-top-item {
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -150,9 +151,9 @@
 }
 
 @media screen and (max-width: 500px) {
-  .banner2 {
+  /* .banner2 {
     margin: 0px 30px 24px;
-  }
+  } */
 
   .banner2-top {
     padding: 20px 18px;
