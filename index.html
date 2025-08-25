@@ -17,7 +17,7 @@
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style-nhuw.css" />
-    <link rel="stylesheet" href="css/reponsive-mobile.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,12 +25,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/banner2.css" />
     <link rel="stylesheet" href="css/promo-register.css" />
+    <link rel="stylesheet" href="css/responsive-mobile-thuy.css">
+    <link rel="stylesheet" href="css/responsive-ipad-thuy.css">
   </head>
 
   <body>
@@ -78,8 +81,7 @@
         <!-- Bên trái -->
         <div class="content-left">
           <h1 class="line-highlight">
-            Trở thành Fullstack <br />
-            Developer trong 6 tháng
+            Trở thành Fullstack Developer trong 6 tháng
           </h1>
           <p class="description">
             Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội
@@ -103,18 +105,10 @@
 
               <div class="offer-countdown">
                 <div class="countdown">
-                  <div class="time-box">
-                    <small>Ngày</small><span class="day"></span>
-                  </div>
-                  <div class="time-box">
-                    <small>Giờ</small><span class="hour"></span>
-                  </div>
-                  <div class="time-box">
-                    <small>Phút</small><span class="minute"></span>
-                  </div>
-                  <div class="time-box">
-                    <small>Giây</small><span class="second"></span>
-                  </div>
+                  <div class="time-box"><small>Ngày</small><span>00</span></div>
+                  <div class="time-box"><small>Giờ</small><span>09</span></div>
+                  <div class="time-box"><small>Phút</small><span>56</span></div>
+                  <div class="time-box"><small>Giây</small><span>26</span></div>
                 </div>
 
                 <p class="slots-left">
@@ -204,10 +198,10 @@
       <!-- Thủy -->
       <div class="roadmap">
         <div class="roadmap-1">
-          <h1>26 Tuần trở thành một FULLSTACK DEVELOPER</h1>
+          <h1 id="timeline-title">26 Tuần trở thành một FULLSTACK DEVELOPER</h1>
           <div class="timeline">
             <div class="btn-timeline">
-              <div class="step active">Tuần 1-7</div>
+              <div class="step active" data-target="week1">Tuần 1-7</div>
               <div class="desc">Java Core & OOP</div>
             </div>
             <div class="arrow">
@@ -222,7 +216,7 @@
               </svg>
             </div>
             <div class="btn-timeline">
-              <div class="step">Tuần 8-10</div>
+              <div class="step" data-target="week2">Tuần 8-10</div>
               <div class="desc">MySQL</div>
             </div>
             <div class="arrow">
@@ -237,7 +231,7 @@
               </svg>
             </div>
             <div class="btn-timeline">
-              <div class="step">Tuần 11-16</div>
+              <div class="step" data-target="week3">Tuần 11-16</div>
               <div class="desc">Spring Boot</div>
             </div>
             <div class="arrow">
@@ -252,7 +246,7 @@
               </svg>
             </div>
             <div class="btn-timeline">
-              <div class="step">Tuần 17-22</div>
+              <div class="step" data-target="week4">Tuần 17-22</div>
               <div class="desc">Frontend - VueJS</div>
             </div>
             <div class="arrow">
@@ -267,14 +261,14 @@
               </svg>
             </div>
             <div class="btn-timeline">
-              <div class="step">Tuần 23-26</div>
+              <div class="step" data-target="week5">Tuần 23-26</div>
               <div class="desc">Mock Project</div>
             </div>
           </div>
         </div>
         <div class="roadmap-2">
           <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item" id="week1">
               <div class="timeline-left">
                 <h3>Java Core & OOP Tuần 1-7</h3>
                 <strong>ĐÀO TẠO TRONG MÔI TRƯỜNG THỰC CHIẾN</strong>
@@ -319,7 +313,7 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" id="week2">
               <div class="timeline-left">
                 <h3>MySQL Tuần 8-10</h3>
                 <strong
@@ -354,9 +348,9 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" id="week3">
               <div class="timeline-left">
-                <h3>Spring Boot Tuần 11–16</h3>
+                <h3>Spring Boot Tuần 11-16</h3>
                 <strong
                   >ĐƯA ĐƯỢC HỆ THỐNG LÊN SERVER VÀ PUBLIC TRÊN INTERNET</strong
                 >
@@ -395,7 +389,7 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" id="week4">
               <div class="timeline-left">
                 <h3>Frontend - VueJS Tuần 17–22</h3>
                 <strong
@@ -431,7 +425,7 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" id="week5">
               <div class="timeline-left">
                 <h3>Mock Project Tuần 23-26</h3>
                 <img src="img/image5.jpg" alt="Lớp học" />
@@ -453,7 +447,7 @@
             </div>
           </div>
           <div class="timeline-toggle">
-            <button id="toggleTimeline">Rút gọn</button>
+            <button id="toggleTimeline">Thu gọn</button>
           </div>
         </div>
       </div>
@@ -461,13 +455,6 @@
       <!-- Như : Programming skills section -->
       <section class="programming-skills">
         <div class="ps-container">
-          <div class="ps-right">
-            <img
-              src="img/Group 2508-2.png"
-              alt="Hình minh họa"
-              class="ps-image"
-            />
-          </div>
           <div class="ps-left">
             <h2 class="ps-title">
               KỸ NĂNG NHẬN ĐƯỢC SAU KHÓA HỌC -
@@ -510,6 +497,13 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="ps-right">
+            <img
+              src="img/Group 2508-2.png"
+              alt="Hình minh họa"
+              class="ps-image"
+            />
           </div>
         </div>
       </section>
@@ -708,7 +702,7 @@
         <div class="footer-logo">
           <img
             class="logo-techzen"
-            src="img/big-logo.png"
+            src="img/logo techzen academy.png"
             alt="Techzen Academy"
           />
           <div class="social-icons">
@@ -716,35 +710,37 @@
             <a href="#"><img src="img/logo/tiktok.png" alt="TikTok" /></a>
             <a href="#"><img src="img/logo/youtube.png" alt="YouTube" /></a>
           </div>
+          <p class="copyright">© 2025 Techzen Academy.</p>
         </div>
-        <div class="footer-content">
-          <div class="footer-column">
-            <h4>Khóa Học</h4>
-            <a href="#">Fullstack JavaScript Developer</a>
-            <a href="#">Java Spring Boot</a>
-            <a href="#">Python AI</a>
-            <a href="#">Xem tất cả khóa học</a>
-          </div>
 
-          <div class="footer-column">
-            <h4>Liên Kết</h4>
-            <a href="#">Về chúng tôi</a>
-            <a href="#">Tham quan văn phòng</a>
-            <a href="#">Đánh giá học viên</a>
-            <a href="#">Đăng ký tư vấn</a>
-          </div>
+        <div class="footer-column">
+          <h4>Khóa Học</h4>
+          <a href="#">Fullstack JavaScript Developer</a>
+          <a href="#">Java Spring Boot</a>
+          <a href="#">Python AI</a>
+          <a href="#">Xem tất cả khóa học</a>
+        </div>
 
-          <div class="footer-column">
-            <h4>Liên Hệ</h4>
-            <p>Tầng 3, 06 Trần Phú, Thạch Thang, Hải Châu, Đà Nẵng</p>
-            <p>academy@techzen.vn</p>
-            <p>093 550 56 40</p>
-          </div>
+        <div class="footer-column">
+          <h4>Liên Kết</h4>
+          <a href="#">Về chúng tôi</a>
+          <a href="#">Tham quan văn phòng</a>
+          <a href="#">Đánh giá học viên</a>
+          <a href="#">Đăng ký tư vấn</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Liên Hệ</h4>
+          <p>Tầng 3, 06 Trần Phú, Thạch Thang, Hải Châu, Đà Nẵng</p>
+          <p>academy@techzen.vn</p>
+          <p>093 550 56 40</p>
         </div>
       </div>
-      <p class="copyright">© 2025 Techzen Academy.</p>
     </footer>
   </body>
-  <script src="js/navbar.js"></script>
-  <script src="js/handleImage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/handleScrollButtonWeek.js"></script>
+  <script src="js/handleStep.js"></script>
+  <script src="js/handleBtnSMAndCollapse.js"></script>
+  <script src="js/handleMaskEffect.js"></script>
 </html>

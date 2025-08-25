@@ -357,7 +357,7 @@
 /*footer*/
 .footer {
   background-color: #e4ecfb;
-  padding: 40px 20px;
+  padding: 30px 20px;
   font-family: Arial, sans-serif;
   margin: auto;
 }
@@ -517,7 +517,7 @@
   }
   .content-left,
   .content-right {
-    padding: 35px;
+    padding: 20px;
     width: 50%;
     min-width: 0;
     max-width: unset;
@@ -528,16 +528,10 @@
     height: auto;
     padding: 30px;
   }
-  .time-box span {
-    padding: 20px;
-  }
-  .slots-left {
-    margin: 20px 0;
-    font-size: 16px;
-    padding-bottom: 30px;
-  }
+
   .offer-box .offer-title,
-  .countdown {
+  .countdown,
+  .slots-left {
     width: 100%;
     height: auto;
     padding: 20px;
@@ -577,17 +571,15 @@
   }
 
   .content-right {
-    width: 100%;
+    width: 900px;
     max-width: none;
     min-width: 0;
     padding: 0;
     display: flex;
-
-    justify-content: flex-start;
+    justify-content: center;
   }
-
   .content-left .line-highlight {
-    font-size: 45px;
+    font-size: 45px; /* nhỏ hơn chữ mặc định */
     font-weight: 600;
     line-height: 1.5;
   }
@@ -605,7 +597,6 @@
     color: #666;
   }
 
-  /* Price-countdown-wrapper giảm khoảng cách */
   .price-countdown-wrapper {
     display: flex;
     justify-content: space-around;
@@ -663,26 +654,6 @@
     display: block; /* nếu đang inline thì block để dễ canh */
     padding-left: 15px;
   }
-  .price-sale {
-    width: 100%;
-    justify-content: flex-start; /* thay vì center */
-    align-items: flex-start; /* canh trên - trái */
-  }
-  .price-sale .offer-price {
-    margin-left: 0;
-    padding-left: 0;
-    text-align: left;
-    display: block;
-    align-self: flex-start; /* ép nó bám lề trái */
-  }
-  .price-sale .old-price {
-    margin-left: 0;
-    padding-left: 0;
-    text-align: left;
-    display: block;
-    align-self: flex-start; /* ép nó bám lề trái */
-  }
-
   .btn-group {
     width: 50%;
     display: flex;
@@ -696,68 +667,18 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+
+@media (max-width: 786px) {
+  /* Header */
   .main-header {
-    width: 100%; /* luôn chiếm đủ chiều ngang */
-    padding: 0.5rem 1rem; /* giảm padding */
-    min-height: 50px;
-    align-items: center;
-    box-sizing: border-box; /* đảm bảo padding tính trong width */
-    overflow-x: hidden; /* ngăn tràn ngang */
+    height: auto;
+    padding: 8px 1vw;
   }
 
-  /* Navigation elements */
   .nav-menu,
   .icon-social,
   .btn-signup {
-    flex-shrink: 1;
-    font-size: 0.85rem;
-  }
-
-  /* Responsive navigation */
-  .nav-menu {
-    gap: 0.8rem; /* Giảm gap giữa menu items */
-    flex-wrap: wrap; /* Cho phép xuống hàng */
-    padding: 0 10px;
-  }
-
-  .nav-item {
-    padding: 0.25rem 0.5rem; /* Giảm padding nav items */
-  }
-
-  /* Compact button */
-  .btn-signup {
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
-    min-width: 60px; /* Đặt chiều rộng tối thiểu */
-    white-space: nowrap; /* Không cho text xuống hàng */
-  }
-
-  /* Social icons optimization */
-  .icon-social {
-    gap: 0.75rem;
-    flex-shrink: 2; /* Cho phép co nhiều hơn */
-    margin-left: -30px;
-  }
-
-  .icon-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-  }
-
-  .icon-social img,
-  .icon-social svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Logo adjustment (nếu có) */
-  .logo {
-    height: 30px; /* Giảm kích thước logo */
-    flex-shrink: 0; /* Logo không co */
+    flex-shrink: 1; /* Cho phép co nhỏ */
   }
 
   /* Nội dung chính */
@@ -789,25 +710,22 @@
   }
 
   .content-left .line-highlight {
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 600;
     line-height: 1.5;
     align-items: center; /*ko nhan*/
   }
 
   .content-left .description {
-    font-size: 24px;
+    font-size: 14px;
     line-height: 1.4;
     padding-top: 20px;
-    width: 600px;
   }
 
   .content-left .course-info {
-    font-size: 16px;
+    font-size: 12px;
     gap: 10px;
-    display: flex;
-    align-items: center; /* Căn giữa dọc */
-    justify-content: center; /* Căn giữa ngang */
+    align-items: center;
   }
 
   /* THAY ĐỔI: Bố cục dọc thay vì ngang */
@@ -820,7 +738,6 @@
 
   .content-right {
     height: 50%;
-    width: 95%;
   }
   .price-sale {
     display: flex;
@@ -828,15 +745,6 @@
     align-items: flex-start;
     gap: 8px;
     width: 70%; /* Chiếm full width */
-    padding-left: 5px; /* Canh trái cách 10px */
-  }
-  .price-sale .offer-price {
-    align-self: flex-start;
-    padding-left: 10px;
-  }
-  .price-sale .old-price {
-    align-self: flex-start;
-    padding-left: 10px;
   }
 
   .offer-countdown {
@@ -852,34 +760,26 @@
     justify-content: flex-start;
     align-items: center;
     gap: 60px;
-    height: 90%;
-    transform: translateX(-20px); /* dịch sang trái 20px */
+    flex-wrap: nowrap;
   }
-
-  .countdown .time-box {
-    display: flex;
-    flex-direction: column; /* cho small + span xếp dọc */
-    align-items: center; /* canh giữa nội dung bên trong */
-    justify-content: center;
-  }
-
   .countdown .time-box small {
+    flex: 1; /* Thay width cố định bằng flex */
+    max-width: 80px;
     font-size: 20px;
     text-align: center;
-    margin-top: -30px; /* bỏ margin thừa */
+    margin-bottom: 30px;
+    margin-top: -30px;
   }
-
   .countdown .time-box span {
-    font-size: 60px;
+    display: block;
+    font-size: 50px;
     font-weight: bold;
-    color: #333;
-    padding-left: 40px;
-    margin-top: -30px; /* bỏ margin thừa */
+    color: #333; /* Thêm màu cụ thể */
+    padding-left: -5px;
   }
 
   /* Slots nằm dưới countdown */
   .slots-left {
-    font-size: 20px;
     display: block;
     text-align: left; /* Căn giữa text */
     margin-top: -50px; /* cách một chút cho đẹp */
@@ -896,7 +796,7 @@
     border-radius: 30px;
   }
 }
-@media screen and (max-width: 500px) {
+
   .main-header {
     width: 100%; /* luôn chiếm đủ chiều ngang */
     padding: 0.5rem 1rem; /* giảm padding */
@@ -957,10 +857,9 @@
   .content-left {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem; /* Thêm padding */
+    flex-direction: column; /* xếp theo chiều dọc */
+    align-items: center; /* căn giữa ngang */
+    justify-content: center; /* căn giữa dọc */
   }
 
   .content-left .line-highlight {
@@ -981,9 +880,8 @@
   .content-left .description {
     font-size: 0.8rem; /* ~12.8px - tăng từ 11.726px */
     line-height: 1.4;
-    padding-top: 1rem; /* Giảm từ 20px */
-    text-align: center; /* Đổi thành center cho đẹp hơn */
-    max-width: 90%; /* Giới hạn độ rộng */
+    padding-top: 20px;
+    text-align: left; /* căn lề trái */
   }
 
   .content-left .course-info {
@@ -1380,7 +1278,7 @@
 .step {
   border: 2px solid #3375fb;
   border-radius: 50px;
-  padding: 12px 24px;
+  padding: 14px 24px;
   background: white;
   color: #1b7bf3;
   font-weight: bold;
@@ -1415,6 +1313,7 @@
   position: relative;
   max-width: 1200px;
   margin: auto;
+  padding-top: 60px;
 }
 
 /* Đường thẳng dọc chính - bắt đầu từ item đầu tiên */
@@ -1424,10 +1323,8 @@
   left: 50%;
   top: -35px;
   bottom: -120px;
-  width: 3px;
+  width: 4px;
   background: #2352bc;
-  /* transform: translateX(-50%); */
-  /* z-index: 1; */
 }
 
 .timeline-item {
@@ -1443,14 +1340,13 @@
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 50%;
+  left: 50.2%;
   top: 50%;
   transform: translateX(-50%);
   width: 34.965px;
   height: 34.965px;
   background: linear-gradient(to right, #0a1d5f, #3374f8);
   border-radius: 50%;
-  /* z-index: 3; */
 }
 
 /* Week label ở giữa timeline */
@@ -1476,7 +1372,6 @@
   left: 50%;
   top: -60px;
   transform: translateX(-50%);
-  /* z-index: 4; */
   background: #e8f0ff;
   color: #2352bc;
   padding: 8px 16px;
@@ -1490,9 +1385,8 @@
   content: "Tuần 8-10";
   position: absolute;
   left: 50%;
-  top: -50px;
+  top: -60px;
   transform: translateX(-50%);
-  /* z-index: 4; */
   background: #e8f0ff;
   color: #2352bc;
   padding: 8px 16px;
@@ -1508,7 +1402,6 @@
   left: 50%;
   top: -60px;
   transform: translateX(-50%);
-  /* z-index: 4; */
   background: #e8f0ff;
   color: #2352bc;
   padding: 8px 16px;
@@ -1524,7 +1417,6 @@
   left: 50%;
   top: -60px;
   transform: translateX(-50%);
-  /* z-index: 4; */
   background: #e8f0ff;
   color: #2352bc;
   padding: 8px 16px;
@@ -1540,7 +1432,6 @@
   left: 50%;
   top: -60px;
   transform: translateX(-50%);
-  /* z-index: 4; */
   background: #e8f0ff;
   color: #2352bc;
   padding: 8px 16px;
@@ -1596,6 +1487,19 @@
   width: 45%;
   padding-left: 22px;
   text-align: left;
+  mask: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Bỏ hiệu ứng mask khi expanded */
+.timeline-right.expanded {
+  mask: none;
+  -webkit-mask: none;
+}
+
+/* Thêm transition mượt */
+.timeline-right {
+  transition: all 0.3s ease;
 }
 
 .aligned-list {
@@ -1610,7 +1514,7 @@
 
 h3 {
   margin: 10px 0;
-  color: #0a1d5f;
+  color: black;
   font-size: 1.2em;
 }
 
@@ -1622,11 +1526,18 @@ ul {
 
 li {
   margin-bottom: 8px;
-  color: #333;
+  color: var(--Sys-On-surface-on-surface-sub, #475569);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.15px;
 }
 
 strong {
-  color: #0a1d5f;
+  color: var(--Sys-On-surface-on-surface-sub, #475569);
   font-size: 14px;
   letter-spacing: 0.5px;
 }
@@ -1634,8 +1545,6 @@ strong {
 .timeline-toggle {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  position: relative;
 }
 
 .timeline-toggle button {
@@ -1651,6 +1560,26 @@ strong {
 }
 
 .timeline-toggle button:hover {
-  background: linear-gradient(to right, #0a1d5f, #3374f8);
+  background-color: #007bff;
   color: rgb(255, 255, 255);
+}
+
+.roadmap-2 .timeline-item {
+  scroll-behavior: smooth;
+  scroll-margin-top: 165px;
+}
+
+.roadmap-2 .timeline.collapsed .timeline-item:not(:first-child) {
+  display: none;
+}
+
+.roadmap-2 .timeline.collapsed {
+  max-height: 1050px;
+}
+
+.roadmap-2 .timeline {
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+  max-height: 4100px;
+  scroll-margin-top: 120px;
 }
