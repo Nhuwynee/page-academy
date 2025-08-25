@@ -344,7 +344,26 @@
 
 
 /* reponsive */
-@media only screen and (min-width:1024px) and (max-width:1280px){
+@media only screen and (min-width:1280px) {
+    .ps-image {
+        max-width: 900px;
+        height: 500px;
+        margin-right: -30px;
+        object-fit: contain;
+    }
+    
+    .ps-left {
+        width: 65%;
+    }
+
+    .ps-title {
+        margin-top: 20px;
+        font-size: 35px;
+        max-width: 90%;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1279px){
     .programming-skills .ps-container .ps-left {
         width: 60%;
     }
@@ -411,7 +430,7 @@
 
 }
 
-@media only screen and (min-width:768px) and (max-width:1022px) {
+@media only screen and (min-width:768px) and (max-width:1023px) {
     
     .programming-skills {
         max-width: 100%;
