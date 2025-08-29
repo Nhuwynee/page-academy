@@ -679,7 +679,7 @@
         position: absolute;
         width: 105%;
         min-height: 100vh; 
-        background-image: url("../img/bg-course-mobile.png");
+        background-image: url("/img/bg-course-mobile.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center; 
