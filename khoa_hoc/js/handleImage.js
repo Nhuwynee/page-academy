@@ -6,31 +6,31 @@ const nav_next = document.querySelector(".navigation .navigation_next");
 
 const images = [
     {
-        img: "img/course-1.png",
+        img: "/img/course-1.png",
         title: "Khóa học 1"
     },
     {
-        img: "img/course-2.png",
+        img: "/img/course-2.png",
         title: "Khóa học 2"
     },
     {
-        img: "img/course-3.png",
+        img: "/img/course-3.png",
         title: "Khóa học 3"
     },
         {
-        img: "img/course-3.png",
+        img: "/img/course-3.png",
         title: "Khóa học 4"
     },
         {
-        img: "img/course-3.png",
+        img: "/img/course-3.png",
         title: "Khóa học 5"
     },
         {
-        img: "img/course-3.png",
+        img: "/img/course-3.png",
         title: "Khóa học 6"
     },
         {
-        img: "img/course-3.png",
+        img: "/img/course-3.png",
         title: "Khóa học 7"
     },
 

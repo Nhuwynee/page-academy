@@ -1,0 +1,964 @@
+import img from "../img/course-1.png";
+
+let all_courses = [
+  {
+    id: 1,
+    name: "Fullstack Developer",
+    image: img,
+    description: "Đây là khóa học haha",
+    durition: "6 tháng",
+    address: "Offline tại văn phòng techzen",
+    price: 50000000,
+    price_sale: 22500000,
+    so_buoi_hoc: 16,
+    sologan:
+      "Thực hành cùng chuyên gia - Làm việc trên codebase thật - Cơ hội tuyển dụng tại Techzen",
+    ly_do_hoc: {
+      lo_trinh: [
+        "Từ Core đến DevOps",
+        "Kết nối chuyên gia & PM Techzen học hỏi kinh nghiệm thực tế",
+        "Môi trường đào tạo thực tế sử dụng server và codebase của Techzen",
+      ],
+      ho_tro_hoc_vien: [
+        "Ưu tiên tuyển dụng",
+        "Định hướng nghề nghiệp 1-1",
+        "Lộ trình tinh gọn, tập trung hands-on và business driven",
+      ],
+      gia_tri_lau_dai: [
+        "Nâng cao chuyên môn từ Fresher lên Junior",
+        "Mở rộng kiến thức fullstack, tăng cơ hội việc làm",
+        "Trải nghiệm quy trình dự án chuẩn Agile",
+      ],
+    },
+    lo_trinh: [
+      {
+        thoi_gian: "Tuần 1-7",
+        title: "Java Core & OOP",
+      },
+      {
+        thoi_gian: "Tuần 8-10",
+        title: "SQL",
+      },
+      {
+        thoi_gian: "Tuần 11-16",
+        title: "Spring Boot",
+      },
+      {
+        thoi_gian: "Tuần 17-22",
+        title: "Frontend - VueJS",
+      },
+      {
+        thoi_gian: "Tuần 23-26",
+        title: "Mock Project",
+      },
+    ],
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "Tuần 1-7",
+        sologan: "Đào tạo trong môi trường thực chiến",
+        noi_dung_chi_tiet: [
+          "Cài đặt môi trường",
+          "Cấu trúc điều kiện",
+          "Cấu trúc lặp cơ bản và nâng cao",
+          "Khai báo và sử dụng phương thức",
+          "Hướng dẫn cách Debug Code",
+          "Xử lý dữ liệu kiểu String",
+          "Mảng một chiều & Hai chiều",
+          "Tổng quan về lập trình hướng đối tượng",
+          "Cách định nghĩa và sử dụng Constructor, Access Modifier, Static",
+          "Kế thừa, đa hình và lớp trừu tượng",
+          "Java Collection Framework",
+          "Generic, Stack, Queue",
+          "Xử lý lỗi và bắt ngoại lệ",
+          "Xử lý File",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Agile & Scrum (Lý thuyết)",
+            "Agile & Scrum (Thực hành)",
+            "Khởi động dự án (Sprint 0)",
+            "Design think (Thấu cảm - phân tích vấn đề)",
+            "Design UI/UX (Wireframe, Flow nghiệp vụ)",
+          ],
+          kien_thuc: [
+            "Làm quen với HTML và cấu trúc cơ bản",
+            "Làm việc với CSS và quy tắc định dạng",
+            "JavaScript căn bản",
+            "Cách dùng Git để quản lý Code",
+          ],
+        },
+      },
+      {
+        thoi_gian: "Tuần 8-10",
+        sologan: "Trau dồi kỹ năng trao đổi làm việc nhóm và hợp tác nhóm",
+        noi_dung_chi_tiet: [
+          "Cài đặt môi trường",
+          "Cấu trúc điều kiện",
+          "Thiết kế Cơ Sở Dữ Liệu",
+          "Thao tác với cơ sở dữ liệu",
+          "Giới thiệu & Câu lệnh cơ bản",
+          "Dữ liệu & Tạo bảng",
+          "JOIN & quan hệ bảng",
+          "GROUP BY & Subquery",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Hướng dẫn dùng Teckchan chạy dự án (Thực hành)",
+            "Horensho – Báo cáo, liên lạc và trao đổi trong team",
+            "Unit Test (Thiết kế testcase và cách test)",
+            "Integration Test & Test API",
+          ],
+          kien_thuc: [
+            "Cách phân tích và thống kê bug",
+            "Cách quản lý và báo cáo tình hình bug",
+          ],
+        },
+      },
+      {
+        thoi_gian: "Tuần 11-16",
+        sologan: "Đưa được hệ thống lên server và public trên internet",
+        noi_dung_chi_tiet: [
+          "Tổng quan về web",
+          "CRUD theo RestFul API",
+          "Mô hình MVC",
+          "Kiến thức về JDBC – kết nối Database",
+          "Spring Data JPA",
+          "Làm việc với Table",
+          "DTO & Mapstruct",
+          "Validate, Exception Handler, Logger",
+          "JUnit, SonarLint, SonarQube",
+          "Authentication, Authorization",
+          "Spring Security",
+          "Refresh Token và Logout",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Tổng quan về DevOps",
+            "Công cụ DevOps và giám sát hệ thống",
+            "Hệ điều hành Linux",
+            "Các khối lệnh cơ bản trong Linux",
+          ],
+          kien_thuc: [
+            "Cách cài đặt môi trường Server",
+            "Thiết lập Nginx và cài đặt bảo mật",
+            "Cài đặt docker",
+            "Backup, Logging và Alerting",
+          ],
+        },
+      },
+      {
+        thoi_gian: "Tuần 17-22",
+        sologan: "Giai đoạn chuyển mình, áp dụng các kiến thức vào thực chiến",
+        noi_dung_chi_tiet: [
+          "Giới thiệu Vue.js & môi trường",
+          "Templating & Binding",
+          "Directive & Condition",
+          "Component cơ bản",
+          "Slot & Lifecycle",
+          "Cách dùng Router",
+          "Quản lý trạng thái – Vuex/Pinia",
+          "Kết nối API & Axios",
+          "Form và Validation",
+          "Composition API",
+          "Deploy & tối ưu",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Quản lý hiệu suất và CDN",
+            "Tối ưu UX và kiểm tra Form",
+            "Tối ưu hóa màu sắc và SEO cơ bản",
+            "SEO nâng cao và tối ưu hóa trang web",
+            "Kỹ thuật Animation và tối ưu hiệu suất",
+          ],
+          kien_thuc: [],
+        },
+      },
+      {
+        thoi_gian: "Tuần 23-26",
+        sologan: "Mock Project – Áp dụng toàn bộ kiến thức đã học",
+        noi_dung_chi_tiet: [
+          "Triển khai dự án từ đầu đến cuối",
+          "Áp dụng full quy trình Agile/Scrum",
+          "Làm việc trong team thực tế của Techzen",
+          "Codebase thật, deploy thật",
+          "Q&A cùng PM/Leader, nhận góp ý",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [],
+          kien_thuc: [],
+        },
+      },
+    ],
+    ky_nang_nhan_duoc: [
+      {
+        name: "Kỹ năng lập trình",
+        content:
+          "Sinh viên CNTT năm 2-4 hoặc mới tốt nghiệp: Mong muốn nâng cao năng lực thực chiến, lấp khoảng cách giữa kiến thức học đường và thực tế doanh nghiệp.",
+      },
+      {
+        name: "Kỹ năng framework",
+        content:
+          "Nắm vững và áp dụng các framework phổ biến (Spring Boot, VueJS, ...) để xây dựng ứng dụng thực tế, rút ngắn thời gian phát triển và nâng cao chất lượng sản phẩm.",
+      },
+      {
+        name: "Kỹ năng teamwork",
+        content:
+          "Rèn luyện kỹ năng phối hợp trong nhóm, áp dụng Agile/Scrum, cải thiện khả năng giao tiếp, báo cáo và xử lý vấn đề khi làm việc trong môi trường dự án thực tế.",
+      },
+    ],
+    doi_tuong: [
+      "Sinh viên CNTT năm 2-4 hoặc mới tốt nghiệp",
+      "Người trái ngành có tư duy logic, mong muốn chuyển nghề sang IT",
+      "Lập trình viên Backend/DevOps đã có nền tảng, muốn bổ sung kỹ năng",
+      "Cá nhân quan tâm đến ngành lập trình, muốn trải nghiệm quy trình",
+      "Doanh nghiệp muốn đào tạo lại hoặc nâng cao kỹ năng nhân sự",
+    ],
+  },
+  {
+    id: 2,
+    name: "SQL",
+    image: img,
+    description:
+      "Khóa học SQL từ cơ bản đến nâng cao: Làm chủ truy vấn dữ liệu, thiết kế và tối ưu cơ sở dữ liệu, phục vụ cho phân tích dữ liệu và phát triển ứng dụng.",
+    durition: "3 tháng",
+    address: "Offline tại văn phòng Techzen",
+    price: 20000000,
+    price_sale: 9500000,
+    so_buoi_hoc: 12,
+    sologan:
+      "Thực hành trên cơ sở dữ liệu thật - Làm việc nhóm với case study - Ứng dụng SQL trong doanh nghiệp",
+    ly_do_hoc: {
+      lo_trinh_toan_dien: [
+        "Làm chủ kiến thức từ SQL cơ bản đến nâng cao",
+        "Ứng dụng SQL vào phân tích dữ liệu và tối ưu hệ thống",
+        "Trải nghiệm xử lý cơ sở dữ liệu qua các dự án thực tế",
+      ],
+      ho_tro_hoc_vien: [
+        "Được kèm cặp trực tiếp bởi giảng viên và mentor",
+        "Bài tập thực hành và case study đa dạng",
+        "Tư vấn lộ trình nghề nghiệp liên quan đến Data/Backend",
+      ],
+      gia_tri_lau_dai: [
+        "Sử dụng SQL thành thạo để phân tích và xử lý dữ liệu",
+        "Kỹ năng thiết kế và tối ưu cơ sở dữ liệu",
+        "Tăng lợi thế cạnh tranh trong lĩnh vực Data Analyst, Backend Developer",
+      ],
+    },
+    lo_trinh: [
+      {
+        thoi_gian: "Buổi 1-4",
+        title: "Cơ bản & Truy vấn dữ liệu",
+      },
+      {
+        thoi_gian: "Buổi 5-7",
+        title: "Thiết kế & Quản lý CSDL",
+      },
+      {
+        thoi_gian: "Buổi 8-10",
+        title: "Kết nối & Tối ưu dữ liệu trong môi trường thực",
+      },
+    ],
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "Ngày 1",
+        sologan: "Làm quen với SQL & Database",
+        noi_dung_chi_tiet: [
+          "Cài đặt môi trường, giới thiệu cơ bản về Database",
+          "Cấu trúc câu lệnh SELECT",
+          "Sử dụng WHERE để lọc dữ liệu",
+          "ORDER BY & LIMIT để sắp xếp và giới hạn kết quả",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Thực hành viết các câu lệnh SQL cơ bản"],
+          kien_thuc: ["Hiểu cách truy vấn dữ liệu từ bảng"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 2",
+        sologan: "Các phép toán & hàm cơ bản",
+        noi_dung_chi_tiet: [
+          "Toán tử so sánh: =, >, <, BETWEEN, LIKE",
+          "Hàm tổng hợp: COUNT, SUM, AVG, MIN, MAX",
+          "GROUP BY & HAVING",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Thực hành thống kê dữ liệu với GROUP BY"],
+          kien_thuc: ["Ứng dụng hàm tổng hợp trong báo cáo dữ liệu"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 3",
+        sologan: "Subquery & nâng cao truy vấn",
+        noi_dung_chi_tiet: [
+          "Khái niệm Subquery",
+          "Ứng dụng Subquery trong lọc và tính toán dữ liệu phức tạp",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Sử dụng Subquery trong truy vấn lồng nhau"],
+          kien_thuc: ["Phân tích dữ liệu bằng câu lệnh SQL nâng cao"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 4",
+        sologan: "Thiết kế & quản lý cơ sở dữ liệu",
+        noi_dung_chi_tiet: [
+          "CREATE DATABASE, CREATE TABLE",
+          "Định nghĩa kiểu dữ liệu",
+          "Ràng buộc: PRIMARY KEY, FOREIGN KEY, NOT NULL, UNIQUE, CHECK",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Tạo mới và quản lý bảng dữ liệu"],
+          kien_thuc: ["Xây dựng cấu trúc cơ sở dữ liệu chuẩn hóa"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 5",
+        sologan: "Quản trị & thay đổi cấu trúc DB",
+        noi_dung_chi_tiet: [
+          "ALTER TABLE để chỉnh sửa bảng",
+          "DROP TABLE, DELETE dữ liệu",
+          "ERD (Entity Relationship Diagram) và phân tích dữ liệu",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Vẽ ERD và chuyển sang bảng vật lý"],
+          kien_thuc: ["Phân tích và mô hình hóa dữ liệu"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 6",
+        sologan: "Viết script DDL & triển khai DB",
+        noi_dung_chi_tiet: [
+          "Thực hành viết script DDL đầy đủ",
+          "Triển khai cơ sở dữ liệu thật từ ERD sang SQL",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Thực hành viết script SQL DDL"],
+          kien_thuc: ["Quản lý vòng đời cơ sở dữ liệu"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 7",
+        sologan: "Làm việc với JOIN cơ bản",
+        noi_dung_chi_tiet: [
+          "INNER JOIN, LEFT JOIN, RIGHT JOIN",
+          "Thực hành JOIN 2–3 bảng",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Thực hành kết hợp dữ liệu nhiều bảng"],
+          kien_thuc: ["Hiểu và áp dụng các loại JOIN cơ bản"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 8",
+        sologan: "JOIN nâng cao & nhiều bảng",
+        noi_dung_chi_tiet: [
+          "FULL JOIN, SELF JOIN, CROSS JOIN, NATURAL JOIN",
+          "JOIN nhiều bảng phức tạp",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Viết truy vấn JOIN nâng cao"],
+          kien_thuc: ["Xử lý dữ liệu từ nhiều bảng trong môi trường thực tế"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 9",
+        sologan: "Tối ưu hóa dữ liệu & Index",
+        noi_dung_chi_tiet: [
+          "Khái niệm Index",
+          "Cách tạo Index và tác động tới hiệu năng",
+          "Các lỗi thường gặp khi JOIN nhiều bảng",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Tối ưu hóa truy vấn với Index"],
+          kien_thuc: ["Hiểu cơ chế Index và khi nào nên sử dụng"],
+        },
+      },
+      {
+        thoi_gian: "Ngày 10",
+        sologan: "Ứng dụng thực tế & tổng kết",
+        noi_dung_chi_tiet: [
+          "Kết hợp JOIN + Subquery",
+          "Thực hành viết báo cáo dữ liệu tổng hợp",
+          "Rút kinh nghiệm về tối ưu SQL",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Xây dựng báo cáo dữ liệu phức tạp"],
+          kien_thuc: ["Ứng dụng tổng hợp SQL trong dự án thật"],
+        },
+      },
+    ],
+    ky_nang_nhan_duoc: [
+      {
+        name: "Kỹ năng SQL",
+        content:
+          "Thành thạo cú pháp SQL, viết được các truy vấn từ cơ bản đến nâng cao, JOIN nhiều bảng và xử lý dữ liệu thực tế.",
+      },
+      {
+        name: "Kỹ năng thiết kế Database",
+        content:
+          "Biết cách phân tích yêu cầu, thiết kế lược đồ cơ sở dữ liệu chuẩn hóa, quản lý ràng buộc và quan hệ.",
+      },
+      {
+        name: "Kỹ năng tối ưu & vận hành",
+        content:
+          "Nắm vững indexing, tối ưu truy vấn, hiểu cách quản lý transaction và xử lý lỗi để vận hành hệ thống bền vững.",
+      },
+    ],
+    doi_tuong: [
+      "Sinh viên CNTT muốn học SQL để phục vụ cho học tập và nghiên cứu",
+      "Người trái ngành muốn chuyển sang Data/Backend Developer",
+      "Lập trình viên muốn bổ sung kỹ năng làm việc với cơ sở dữ liệu",
+      "Phân tích viên dữ liệu cần sử dụng SQL trong công việc hàng ngày",
+      "Doanh nghiệp muốn đào tạo nhân sự nâng cao năng lực quản lý dữ liệu",
+    ],
+  },
+  {
+    id: 3,
+    name: "DevOps",
+    image: img,
+    description:
+      "Khóa học DevOps từ cơ bản đến thực chiến: nắm vững Linux, Docker, Nginx, PostgreSQL, CI/CD, Logging và triển khai ứng dụng thực tế.",
+    durition: "3 tháng",
+    address: "Offline tại văn phòng Techzen",
+    price: 25000000,
+    price_sale: 12000000,
+    so_buoi_hoc: 12,
+    sologan:
+      "Học DevOps qua thực hành trực tiếp - Làm chủ công cụ triển khai và giám sát hệ thống - Triển khai dự án thực tế",
+    lo_trinh: [
+      { thoi_gian: "Buổi 1-3", title: "Môi trường, Công cụ cơ bản & Bảo mật" },
+      { thoi_gian: "Buổi 4-6", title: "Linux cơ bản, Nginx & Docker" },
+      { thoi_gian: "Buổi 7-9", title: "Database, Script & Tự động hóa" },
+      {
+        thoi_gian: "Buổi 10-12",
+        title: "Triển khai dự án, Logging & Tổng kết",
+      },
+    ],
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "Buổi 1",
+        sologan: "Giới thiệu & Chuẩn bị môi trường",
+        noi_dung_chi_tiet: [
+          "Khái niệm server, VPS, cloud; mô hình client-server",
+          "Cài đặt VirtualBox trên Windows",
+          "Tạo VM Ubuntu 22.04; thiết lập SSH",
+          "SSH key authentication",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Tạo VM, kết nối SSH", "Hiểu mô hình client-server"],
+          kien_thuc: ["Cấu hình máy ảo Ubuntu cơ bản"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 2",
+        sologan: "Kết nối & Cài đặt công cụ cơ bản",
+        noi_dung_chi_tiet: [
+          "SSH vào server",
+          "Cài đặt curl, wget, git",
+          "Cấu hình SSH key agent & SSH config file",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Cài đặt công cụ quản trị cơ bản"],
+          kien_thuc: ["Quản lý kết nối SSH an toàn"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 3",
+        sologan: "Quản lý người dùng & Bảo mật cơ bản",
+        noi_dung_chi_tiet: [
+          "Người dùng, nhóm, sudo; SSH key authentication",
+          "Tạo user mới, cấu hình sudo permissions",
+          "Cài đặt bảo mật cơ bản: UFW, CSF",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Quản lý user & phân quyền"],
+          kien_thuc: ["Thiết lập bảo mật căn bản cho server"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 4",
+        sologan: "Các lệnh cơ bản trong Linux",
+        noi_dung_chi_tiet: [
+          "Shell, syntax, man pages",
+          "Các lệnh thao tác file: cp, mv, rm",
+          "Quản lý package: chmod, chown, grep, find, apt",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Thực hành lệnh Linux cơ bản"],
+          kien_thuc: ["Quản trị hệ thống qua CLI"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 5",
+        sologan: "Cài đặt Nginx & Triển khai ứng dụng đầu tiên",
+        noi_dung_chi_tiet: [
+          "Cài đặt Nginx",
+          "Reverse proxy, server block",
+          "Deploy ứng dụng demo Node.js",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Cài đặt & cấu hình Nginx"],
+          kien_thuc: ["Triển khai ứng dụng web cơ bản"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 6",
+        sologan: "Docker – Khái niệm & Cài đặt",
+        noi_dung_chi_tiet: [
+          "Container vs VM",
+          "Docker Engine, Docker CLI",
+          "Dockerfile, build image, run container",
+          "Docker Compose",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Làm việc với Docker CLI"],
+          kien_thuc: ["Quản lý container & image"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 7",
+        sologan: "PostgreSQL bằng Docker & Truy cập từ local",
+        noi_dung_chi_tiet: [
+          "PostgreSQL container",
+          "Cấu hình volume để lưu trữ dữ liệu",
+          "Kết nối DB từ local",
+          "Quản lý dữ liệu bằng psql",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Chạy PostgreSQL bằng Docker"],
+          kien_thuc: ["Làm việc với cơ sở dữ liệu qua container"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 8",
+        sologan: "Tạo Script đơn giản & Backup/File Copy",
+        noi_dung_chi_tiet: [
+          "Shell script cơ bản: shebang, biến, if, exit code",
+          "Quyền chmod, echo",
+          "Viết script backup dữ liệu",
+          "Copy file bằng rsync, scp",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Viết script tự động hóa"],
+          kien_thuc: ["Quản lý backup dữ liệu cơ bản"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 9",
+        sologan: "Shell nâng cao & Lịch chạy tự động",
+        noi_dung_chi_tiet: [
+          "Trap signal, exit codes nâng cao",
+          "Viết shell script deploy",
+          "Thiết lập cronjob, systemd timer",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Tự động hóa deploy với script"],
+          kien_thuc: ["Quản lý cronjob & scheduling"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 10",
+        sologan: "Chuyển file lên server với SCP",
+        noi_dung_chi_tiet: [
+          "scp, rsync, key exchange",
+          "Upload & download file từ server",
+          "Tích hợp vào pipeline CI/CD",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Quản lý file qua SCP/rsync"],
+          kien_thuc: ["Tự động hóa quy trình copy dữ liệu"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 11",
+        sologan: "Quản lý Log, Backup & Deploy dự án thực tế",
+        noi_dung_chi_tiet: [
+          "Logrotate, quản lý log",
+          "Backup database & file",
+          "Deploy project thực tế từ Git repository",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Triển khai dự án với Git"],
+          kien_thuc: ["Thiết lập logging & backup an toàn"],
+        },
+      },
+      {
+        thoi_gian: "Buổi 12",
+        sologan: "Thi lý thuyết & Kết thúc khóa học",
+        noi_dung_chi_tiet: [
+          "Phát đề thi, trắc nghiệm & tự luận",
+          "Chấm điểm, tổng kết",
+          "Phát chứng chỉ",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Deploy full stack app lên server"],
+          kien_thuc: ["Đánh giá & củng cố toàn bộ kiến thức DevOps"],
+        },
+      },
+    ],
+    ky_nang_nhan_duoc: [
+      {
+        name: "Kỹ năng hệ điều hành Linux",
+        content:
+          "Thành thạo các lệnh Linux, quản lý user, phân quyền và bảo mật hệ thống.",
+      },
+      {
+        name: "Kỹ năng triển khai ứng dụng",
+        content:
+          "Cài đặt & cấu hình Nginx, Docker, PostgreSQL và triển khai ứng dụng thực tế.",
+      },
+      {
+        name: "Kỹ năng tự động hóa & scripting",
+        content:
+          "Viết shell script, cronjob và quản lý backup để tự động hóa công việc.",
+      },
+      {
+        name: "Kỹ năng DevOps thực chiến",
+        content:
+          "Vận hành log, backup, CI/CD và triển khai dự án từ Git repository lên server thật.",
+      },
+    ],
+    doi_tuong: [
+      "Sinh viên CNTT năm 3-4 hoặc mới tốt nghiệp muốn theo DevOps",
+      "Người trái ngành muốn chuyển hướng sang System Admin/DevOps",
+      "Lập trình viên muốn bổ sung kỹ năng về hạ tầng & triển khai",
+      "Tester, BA, QA muốn hiểu quy trình CI/CD và DevOps",
+      "Doanh nghiệp muốn đào tạo đội ngũ triển khai & vận hành hệ thống",
+    ],
+  },
+  {
+    id: 4,
+    name: "Java Backend",
+    image: img,
+    description:
+      "Làm chủ Java Core → OOP → JDBC/SQL → Spring Boot (REST, JPA, Security) → Deploy & dự án thực chiến.",
+    durition: "4 tháng",
+    address: "Offline tại văn phòng Techzen",
+    price: 28000000,
+    price_sale: 14900000,
+    so_buoi_hoc: 32,
+    sologan: "Code chuẩn doanh nghiệp • API thật • Deploy thật",
+    ly_do_hoc: {
+      lo_trinh: [
+        "Hệ thống kiến thức từ Core đến Spring Boot & Deploy",
+        "Học trên codebase thật, tiêu chuẩn doanh nghiệp",
+        "Kèm cặp 1-1, review code, luyện test & tối ưu",
+      ],
+      ho_tro_hoc_vien: [
+        "Mentor hỗ trợ hàng ngày",
+        "Bài tập/mini project mỗi tuần",
+        "Định hướng nghề nghiệp, mock interview",
+      ],
+      gia_tri_lau_dai: [
+        "Tự build dịch vụ backend hoàn chỉnh",
+        "Thành thạo quy trình API, DB, bảo mật, logging",
+        "Sẵn sàng ứng tuyển Fresher/Junior Backend",
+      ],
+    },
+    lo_trinh: [
+      { thoi_gian: "(Tuần 1-4)", title: "Java Core & OOP" },
+      { thoi_gian: "(Tuần 5-8)", title: "SQL, ERD, JDBC" },
+      { thoi_gian: "(Tuần 9-12)", title: "Spring Boot REST & JPA" },
+      {
+        thoi_gian: "(Tuần 13-16)",
+        title: "Security, Deploy & Project",
+      },
+    ],
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "(Tuần 1-4)",
+        sologan: "Nền tảng vững – tư duy OOP sạch",
+        noi_dung_chi_tiet: [
+          "Cài đặt môi trường, Maven/Gradle, cấu trúc dự án",
+          "Java syntax, kiểu dữ liệu, điều kiện & vòng lặp",
+          "Method, scope, static/final, String & Date/Time API",
+          "OOP: Class, Object, Encapsulation, Inheritance, Polymorphism, Abstraction",
+          "Exception handling, Debugging, Logging cơ bản",
+          "Collections, Generics, Stream API, Optional",
+          "JUnit 5 & Mockito: viết test cơ bản",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Debug code, viết unit test",
+            "Clean code & naming, tách lớp/đóng gói",
+          ],
+          kien_thuc: [
+            "Git cơ bản (branch, commit, PR)",
+            "Agile & Scrum (lý thuyết + thực hành Sprint 0)",
+          ],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 5-8)",
+        sologan: "Thiết kế & thao tác dữ liệu chuẩn hóa",
+        noi_dung_chi_tiet: [
+          "Phân tích yêu cầu, vẽ ERD, chuẩn hóa dữ liệu",
+          "SQL cơ bản → nâng cao: SELECT, JOIN, GROUP BY, Subquery, View",
+          "Ràng buộc PK/FK/UNIQUE/CHECK, Index & tối ưu truy vấn",
+          "JDBC: kết nối DB, PreparedStatement, transaction",
+          "Migration tool: Flyway/Liquibase",
+          "Viết repository thuần JDBC, mapping DTO/VO",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Tối ưu query, đọc EXPLAIN",
+            "Quản lý schema với migration",
+          ],
+          kien_thuc: [
+            "PostgreSQL basics & psql",
+            "Horensho – báo cáo/trao đổi trong team",
+          ],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 9-12)",
+        sologan: "Xây RESTful API bài bản với Spring Boot",
+        noi_dung_chi_tiet: [
+          "Spring Boot fundamentals, cấu hình YAML/Profiles",
+          "Layered architecture: Controller–Service–Repository",
+          "REST: CRUD, pagination, sorting, validation (Hibernate Validator)",
+          "Exception Handler, Global error response, Logger (SLF4J)",
+          "Spring Data JPA, Entity mapping, JPQL/Criteria",
+          "DTO & MapStruct, ModelMapper",
+          "Swagger/OpenAPI, Postman collection",
+          "Unit Test & Integration Test (WebMvcTest, Testcontainers)",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Thiết kế API chuẩn REST",
+            "Viết integration test, mock external deps",
+          ],
+          kien_thuc: [
+            "SonarLint/SonarQube – code quality",
+            "CI cơ bản với GitHub Actions",
+          ],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 13-16)",
+        sologan: "Bảo mật • Deploy • Dự án thực chiến",
+        noi_dung_chi_tiet: [
+          "Spring Security: Authentication/Authorization, Password encoder",
+          "JWT/Refresh token, Role/Permission, CORS",
+          "Caching (Spring Cache), Mail/Scheduler",
+          "Dockerize service, compose với PostgreSQL & pgAdmin",
+          "Nginx reverse proxy, HTTPS (Let’s Encrypt)",
+          "Observability: Logging (Logback), log format, basic metrics",
+          "Triển khai server Linux (Ubuntu) & backup",
+          "Mini capstone: thiết kế – code – test – deploy",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Triển khai dịch vụ bằng Docker + Nginx",
+            "Thiết lập auth JWT và refresh token",
+          ],
+          kien_thuc: [
+            "DevOps căn bản: environment, logging, backup",
+            "Quy trình release, checklist production",
+          ],
+        },
+      },
+    ],
+    ky_nang_nhan_duoc: [
+      {
+        name: "Java Core & OOP vững",
+        content:
+          "Nắm chắc cú pháp, cấu trúc dữ liệu, OOP/Collections/Stream, viết unit test.",
+      },
+      {
+        name: "Làm việc với Database",
+        content:
+          "Thiết kế ERD, viết SQL nâng cao, dùng JDBC & migration tool, tối ưu truy vấn.",
+      },
+      {
+        name: "Spring Boot production-ready",
+        content:
+          "Xây REST API, JPA/JPQL, Validation, Exception Handler, Logger, Swagger, Testing.",
+      },
+      {
+        name: "Bảo mật & Triển khai",
+        content:
+          "Spring Security + JWT, Docker/Nginx, logging/backup, deploy lên server Linux.",
+      },
+    ],
+    doi_tuong: [
+      "Sinh viên năm 2–4 hoặc mới tốt nghiệp muốn theo Backend Java",
+      "Dev trái ngành có tư duy logic, cần lộ trình rõ ràng",
+      "Fresher muốn nâng cấp lên Junior qua dự án thực chiến",
+      "QA/BA muốn hiểu sâu API, DB, Security để phối hợp team",
+      "Doanh nghiệp cần đào tạo đội ngũ backend chuẩn quy trình",
+    ],
+  },
+  {
+    id: 5,
+    name: "Python AI",
+    image: img,
+    description:
+      "Khóa học Python AI: từ nền tảng Python → Xử lý dữ liệu → Machine Learning → Deep Learning → Dự án AI thực chiến.",
+    durition: "5 tháng",
+    address: "Offline tại văn phòng Techzen",
+    price: 32000000,
+    price_sale: 17500000,
+    so_buoi_hoc: 40,
+    sologan: "Python chuẩn AI • Data thật • Dự án AI thực tế",
+    ly_do_hoc: {
+      lo_trinh: [
+        "Từ Python cơ bản đến AI nâng cao trong 5 tháng",
+        "Học lý thuyết đi kèm thực hành với dataset thật",
+        "Kèm cặp mentor 1-1, review code & hướng dẫn dự án",
+      ],
+      ho_tro_hoc_vien: [
+        "Mini project theo từng giai đoạn",
+        "Hướng dẫn dựng portfolio AI cá nhân",
+        "Mock interview cho vị trí Data/AI",
+      ],
+      gia_tri_lau_dai: [
+        "Thành thạo Python cho Data/AI",
+        "Biết xử lý dữ liệu, train model & đánh giá kết quả",
+        "Tự tin apply Data Analyst, ML Engineer Fresher",
+      ],
+    },
+    lo_trinh: [
+      {
+        thoi_gian: "(Tuần 1-4)",
+        title: "Python cơ bản & Xử lý dữ liệu",
+      },
+      {
+        thoi_gian: "(Tuần 5-8)",
+        title: "Pandas, NumPy & Data Visualization",
+      },
+      { thoi_gian: "(Tuần 9-12)", title: "Machine Learning cơ bản" },
+      {
+        thoi_gian: "(Tuần 13-16)",
+        title: "Deep Learning & Neural Networks",
+      },
+      { thoi_gian: "(Tuần 17-20)", title: "Dự án AI thực chiến" },
+    ],
+
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "(Tuần 1-4)",
+        sologan: "Nắm vững Python từ cơ bản đến nâng cao",
+        noi_dung_chi_tiet: [
+          "Cài đặt môi trường (Anaconda, Jupyter Notebook)",
+          "Biến, kiểu dữ liệu, toán tử",
+          "Cấu trúc điều kiện, vòng lặp",
+          "Hàm, module, package",
+          "OOP trong Python",
+          "Xử lý file (CSV, JSON)",
+          "Thao tác cơ bản với thư viện Python chuẩn",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Viết script Python cơ bản", "Xử lý dữ liệu text & file"],
+          kien_thuc: ["Làm quen Git, GitHub, môi trường Jupyter"],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 5-8)",
+        sologan: "Làm chủ thư viện xử lý dữ liệu & trực quan hóa",
+        noi_dung_chi_tiet: [
+          "NumPy: mảng, broadcasting, vector hóa",
+          "Pandas: Series, DataFrame, groupby, join/merge",
+          "Xử lý dữ liệu thiếu, dữ liệu nhiễu",
+          "Matplotlib & Seaborn: biểu đồ cơ bản & nâng cao",
+          "EDA (Exploratory Data Analysis)",
+          "Mini project: Phân tích dữ liệu bán hàng/finance",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Tiền xử lý dữ liệu thật",
+            "Vẽ biểu đồ & dashboard phân tích",
+          ],
+          kien_thuc: ["Kỹ năng EDA, hiểu insight từ dataset"],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 9-12)",
+        sologan: "Bước vào Machine Learning",
+        noi_dung_chi_tiet: [
+          "Giới thiệu ML: supervised vs unsupervised",
+          "Scikit-learn: pipeline cơ bản",
+          "Hồi quy tuyến tính, logistic regression",
+          "KNN, Decision Tree, Random Forest",
+          "Clustering: KMeans",
+          "Đánh giá model: confusion matrix, ROC, F1-score",
+          "Mini project: Phân loại khách hàng/Spam detection",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Train & test ML models với sklearn"],
+          kien_thuc: ["Đánh giá & chọn mô hình phù hợp"],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 13-16)",
+        sologan: "Deep Learning & AI nâng cao",
+        noi_dung_chi_tiet: [
+          "Giới thiệu Deep Learning",
+          "TensorFlow & Keras cơ bản",
+          "Neural Network: activation, loss, optimizer",
+          "CNN cho xử lý ảnh",
+          "RNN & LSTM cho xử lý chuỗi",
+          "Transfer Learning",
+          "Mini project: Nhận diện ảnh hoặc phân tích sentiment",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Xây dựng mô hình DL với TensorFlow/Keras"],
+          kien_thuc: ["Ứng dụng CNN, RNN trong AI thực tế"],
+        },
+      },
+      {
+        thoi_gian: "(Tuần 17-20)",
+        sologan: "Dự án AI thực chiến",
+        noi_dung_chi_tiet: [
+          "Xác định đề tài & thu thập dataset",
+          "EDA & tiền xử lý",
+          "Xây dựng pipeline ML/DL",
+          "Triển khai mô hình (Flask/FastAPI)",
+          "Deploy lên server (Docker, Heroku/AWS/GCP)",
+          "Trình bày & báo cáo kết quả",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Xây dựng & triển khai dự án AI end-to-end"],
+          kien_thuc: ["Kinh nghiệm teamwork & báo cáo dự án"],
+        },
+      },
+    ],
+
+    ky_nang_nhan_duoc: [
+      {
+        name: "Python vững chắc",
+        content:
+          "Thành thạo Python từ cơ bản đến OOP, làm việc tốt với file & script.",
+      },
+      {
+        name: "Xử lý & phân tích dữ liệu",
+        content:
+          "Dùng NumPy, Pandas, Seaborn để xử lý & trực quan hóa dữ liệu thật.",
+      },
+      {
+        name: "Machine Learning",
+        content:
+          "Biết cách train/test, đánh giá mô hình & áp dụng các thuật toán ML phổ biến.",
+      },
+      {
+        name: "Deep Learning",
+        content: "Xây dựng Neural Network, CNN, RNN bằng TensorFlow/Keras.",
+      },
+      {
+        name: "Dự án AI thực tế",
+        content:
+          "Hoàn thành một dự án AI end-to-end từ phân tích dữ liệu → training → deploy.",
+      },
+    ],
+
+    doi_tuong: [
+      "Sinh viên CNTT muốn theo Data/AI",
+      "Người trái ngành có tư duy logic, muốn chuyển hướng sang Data/AI",
+      "Lập trình viên muốn bổ sung kỹ năng AI/ML",
+      "Phân tích viên dữ liệu muốn mở rộng sang Machine Learning",
+      "Doanh nghiệp muốn đào tạo nhân sự Data/AI nội bộ",
+    ],
+  },
+];
+
+export default all_courses;
