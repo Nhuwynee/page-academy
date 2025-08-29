@@ -2,8 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSignup  = document.querySelector(".btn-signup");
   const btnSignup2 = document.querySelector(".btn-primary");
   const btnSignup3 = document.querySelector(".btn-outline");
-  const navItemFocus = document.querySelector(".nav-item-focus");
+  const navItemFocus = document.querySelector(".roll-top");
   const promoSection = document.querySelector(".promo-register-right");
+
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
 
   // Hàm scroll với easing tùy chỉnh
   const smoothScrollTo = (targetY, duration = 1000) => {
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event?.preventDefault(); // Ngăn default behavior
     
     if (promoSection) {
-      const targetY = promoSection.getBoundingClientRect().top + window.pageYOffset - 80;
+      const targetY = promoSection.getBoundingClientRect().top + window.pageYOffset - 120;
       
       smoothScrollTo(targetY, 1200); // 1.2 giây
       
@@ -95,8 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollToPromo(e);
     });
   }
-  
-  if (navItemFocus) {
-    navItemFocus.addEventListener("click", scrollToHeader);
+
+  if (navItemFocus) navItemFocus.addEventListener("click", scrollToHeader);
+
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
   }
 });
+

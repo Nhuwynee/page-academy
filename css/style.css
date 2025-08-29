@@ -17,7 +17,6 @@
 .main-header {
   padding-top: 15px;
   width: 100%;
-
   height: 100px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -32,32 +31,42 @@
   max-width: 1552px;
   margin: 0 auto;
   padding: 12px 20px;
+}
+.nav-item{
+  margin: 0;
+}
+
+
+/* Navbar list - container chính */
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.logo_techzen {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo trái, button phải */
-  width: 300px; /* tùy chỉnh */
-}
-/* Logo */
-.logo_techzen img {
-  height: 40px;
-  width: auto; /* Thêm để giữ tỷ lệ ảnh */
+  width: 100%;
 }
 
-/* Menu */
-.nav-menu {
+/* Logo section */
+.navbar-list .logo_techzen {
   display: flex;
-  gap: 30px;
-  list-style: none; /* Nếu sử dụng ul/li */
-  background-color: rgb(232, 244, 250);
-  border-radius: 20px;
+  align-items: center;
+  justify-content: flex-start; /* hoặc flex-end */
+  gap: 20px; /* thêm khoảng cách cố định */
+  width: 300px;
 }
+
+.logo_techzen img {
+  margin-top: 15px;
+  height: 40px;
+  width: auto;
+}
+
+/* Menu toggle button */
 .menu-toggle {
-  display: none; /* Ẩn mặc định */
+   margin-top: 15px;
+  display: none;
   font-size: 24px;
   background: none;
   border: none;
@@ -65,30 +74,55 @@
   cursor: pointer;
 }
 
-.nav-item {
+/* Nav menu section */
+.navbar-list .nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  background-color: rgb(232, 244, 250);
+  border-radius: 20px;
+
+}
+
+/* Nav items */
+.nav-menu-list .nav-item {
+  list-style: none;
+}
+
+.nav-item div {
   font-size: 12px;
   font-weight: 500;
   padding: 10px 14px;
   border-radius: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
-  color: inherit; /* Thêm màu mặc định */
-  text-decoration: none; /* Nếu là link */
+  color: inherit;
+  text-decoration: none;
   display: flex;
   align-items: center;
   height: 40px;
-}
-.icon-social {
-  display: flex;
-  gap: 10px;
+  box-sizing: border-box;
 }
 
-.nav-item:hover {
+.nav-item div:hover {
   background-color: #007bff;
   color: #fff;
 }
 
-.nav-item-focus {
+/* Nav item focus */
+.nav-menu-list .nav-item-focus {
+  list-style: none;
+}
+
+.nav-item-focus div {
   background-color: #87c0fd;
   font-size: 12px;
   font-weight: 700;
@@ -100,9 +134,23 @@
   height: 40px;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-/* Nút đăng ký + icon mạng xã hội */
+/* Icon social section */
+.navbar-list .icon-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Social media buttons */
 .btn-signup-logo {
   border: none;
   outline: none;
@@ -115,9 +163,10 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  object-fit: cover; /* Thêm để ảnh không bị méo */
+  object-fit: cover;
 }
 
+/* Sign up button */
 .btn-signup {
   background-color: #007bff;
   color: white;
@@ -127,12 +176,27 @@
   font-size: 10px;
   font-weight: 200;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   height: 40px;
+    transition: filter 0.3s ease, transform 0.2s ease;
 }
 
 .btn-signup:hover {
-  background-color: #0f5bbd;
+ filter: brightness(1.2);
+  transform: scale(1.03); /* hơi phóng to */
+}
+
+.btn-signup h1 {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 200;
+  color: var(--Sys-Primary-on-primary, #FFF);
+text-align: center;
+font-family: var(--font-font, "Open Sans");
+font-size: var(--size-button-medium, 14px);
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 16.8px */
+letter-spacing: 0.4px;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -144,7 +208,7 @@
   gap: 30px;
   align-items: center;
   min-height: 500px; /* Thêm chiều cao tối thiểu */
-  padding: 0 20px;
+  padding:  20px 30px 100px 30px;
   justify-content: space-between; /* Căn ngang: giữ khoảng cách giữa trái và phải */
   height: 200%;
 
@@ -249,12 +313,6 @@
   text-decoration: line-through;
 }
 .offer-countdown {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: left;
-  width: 100%;
-  height: 80%;
   padding-top: 10px;
   gap: 20px;
 }
@@ -344,8 +402,8 @@
 }
 
 .btn-outline:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: #c1d5eb;
+  color: #007bff;
   transform: translateY(-1px); /* Thêm hiệu ứng nhẹ */
 }
 
@@ -474,48 +532,105 @@
    MEDIA QUERY CHUẨN RESPONSIVE
 =========================================== */
 @media screen and (max-width: 1280px) {
-  .nav-menu {
-    display: flex;
-    gap: 20px;
-    background-color: rgb(232, 244, 250);
-    border-radius: 20px;
-    padding: 10px 0;
-  }
-  .menu-toggle {
-    display: block;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 0px 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-    height: 40px;
-    margin-left: -100px;
-  }
-  .menu-toggle:hover {
-    background-color: #1b5bb5;
-  }
-  .icon-social {
-    right: 20%;
-    gap: 10px;
-    margin-bottom: 2px;
-  }
-  .nav-item {
-    display: none;
-  }
-  .nav-item-focus {
-    display: none;
+  /* Cho header nhỏ lại */
+  .main-header {
+    height: auto;
+    padding-top: 10px;
   }
 
   .navbar {
     padding: 5px 6px;
     height: auto;
   }
-  .main-header {
-    height: 80px;
+
+  /* Menu toggle (nút mở menu) */
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: #000;
+    background: none;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .menu-toggle:hover {
+    background-color: #1b5bb5;
+    color: #fff;
+  }
+
+  /* Container menu */
+  .nav-menu {
+    position: absolute;
+    top: 80px;       /* nằm dưới header */
+    left: 0;         
+    width: 100vw;    /* chiều rộng menu */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: rgb(232, 244, 250);
+    border-radius: 0 10px 10px 0;
+    padding: 20px 0;
+    display: flex;   /* ẩn mặc định, chỉ mở khi toggle */
+     transform: translatey(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none; /* Ngăn click khi ẩn */
+  
+  }
+
+  
+  .nav-menu.show {
+   transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+  /* Menu list thành dọc */
+  .nav-menu-list {
+    display: flex; /* ẩn mặc định, chỉ mở khi toggle */
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 0;
+  }
+
+  .nav-menu-list .nav-item,
+  .nav-menu-list .nav-item-focus {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-menu-list .nav-item div,
+  .nav-menu-list .nav-item-focus div {
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 0;
+  }
+  .btn-signup h1{
+    font-size: 80%;
+  }
+  .logo_techzen img {
+    height: auto;
+    width: 80%;
+}
+.navbar-list .logo_techzen {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+  /* Icon social giữ nguyên */
+  .icon-social {
+    margin-top: 10px;
+    gap: 10px;
   }
   .content-left,
   .content-right {
@@ -562,7 +677,34 @@
     flex-shrink: 1;
     font-size: 0.9rem; /* Thêm giảm font-size */
   }
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 180px;
 
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(232, 244, 250);
+    border-radius: 0 10px 10px 0;
+    padding: 6px 0;
+    margin-top: 5px;
+  }
+  .nav-menu.show {
+   transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+  .logo-techzen div img {
+    width: 90%;
+  }
+  .btn-signup{
+    width: 120px;
+  }
+  .menu-toggle {
+    font-size: 28px;
+    padding: 6px 10px;
+  }
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
@@ -704,71 +846,50 @@
 }
 
 
- @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  /* Giữ header gọn gàng */
   .main-header {
-    width: 100%;         /* luôn chiếm đủ chiều ngang */
-    padding: 0.5rem 1rem; /* giảm padding */
-    min-height: 50px;
-    align-items: center;
-    box-sizing: border-box; /* đảm bảo padding tính trong width */
-    overflow-x: hidden;     /* ngăn tràn ngang */
+    height: auto;
+    padding: 10px;
   }
 
-  /* Navigation elements */
-  .nav-menu,
-  .icon-social,
-  .btn-signup {
-    flex-shrink: 1;
-    font-size: 0.85rem;
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
   }
 
-  /* Responsive navigation */
   .nav-menu {
-    gap: 0.8rem; /* Giảm gap giữa menu items */
-    flex-wrap: wrap; /* Cho phép xuống hàng */
-    padding: 0 10px;
+    position: absolute;
+    top: 60px; /* ngay dưới header */
+    left: 0;
+    width: 220px;
+    display: none; /* ẩn mặc định, bật bằng toggle JS */
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(232, 244, 250);
+    border-radius: 0 10px 10px 0;
+    padding: 10px 0;
   }
 
-  .nav-item {
-    padding: 0.25rem 0.5rem; /* Giảm padding nav items */
+  .nav-menu-list {
+    display: none; /* ẩn mặc định, chỉ mở khi toggle */
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
 
-  /* Compact button */
-  .btn-signup {
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
-    min-width: 60px; /* Đặt chiều rộng tối thiểu */
-    white-space: nowrap; /* Không cho text xuống hàng */
+  .nav-menu-list .nav-item,
+  .nav-menu-list .nav-item-focus {
+    width: 100%;
   }
 
-  /* Social icons optimization */
-  .icon-social {
-    gap: 0.75rem;
-    flex-shrink: 2; /* Cho phép co nhiều hơn */
-    margin-left: -30px;
+  .nav-menu-list .nav-item div,
+  .nav-menu-list .nav-item-focus div {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
   }
-
-  .icon-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-  }
-
-  .icon-social img,
-  .icon-social svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Logo adjustment (nếu có) */
-  .logo {
-    height: 30px; /* Giảm kích thước logo */
-    flex-shrink: 0; /* Logo không co */
-  }
-
-
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
@@ -908,56 +1029,53 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .main-header {
-    width: 100%;         /* luôn chiếm đủ chiều ngang */
-    padding: 0.5rem 1rem; /* giảm padding */
-    min-height: 50px;
-    align-items: center;
-    box-sizing: border-box; /* đảm bảo padding tính trong width */
-    overflow-x: hidden;     /* ngăn tràn ngang */
-  }
-  .logo_techzen {
-    width: 60%; /* Chiếm hết chiều ngang */
-  
-  }
-  .logo_techzen img{
-    max-width: 50%;
-    height: auto;
-  }
   .menu-toggle {
-    font-size: 20px;
-    
- 
+    display: block;
+    font-size: 22px;
   }
-  .btn-signup{
-    width: 130%;
-    height: 130%;
+  .logo-techzen div img{
+   max-width: 100px;
+  width: 50%;
+  height: auto; 
   }
-  .btn-signup h1{
-    font-size: 10px;
-  }
-
   .nav-menu {
-    gap: 0.5rem;       /* giảm gap */
-    flex-wrap: wrap;   /* cho xuống hàng khi hẹp */
+    margin-top: 10px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 200px;
+  
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(232, 244, 250);
+    border-radius: 0 10px 10px 0;
+    padding: 8px 0;
+     pointer-events: none;
   }
 
-  .icon-social {
-    margin-left: 0;    /* bỏ margin âm gây tràn */
-    gap: 0.5rem;
+  .nav-menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
-
-  .btn-signup {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-    min-width: auto;   /* bỏ min-width cứng nếu gây tràn */
-  }
-
-  .nav-menu,
   .icon {
     display: none;
   }
 
+  .nav-menu-list .nav-item div,
+  .nav-menu-list .nav-item-focus div {
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+  }
+  .btn-signup{
+    width: 100px;
+  }
+  .btn-signup h1{
+
+    font-size: 80%;
+  }
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
@@ -974,7 +1092,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem; /* Thêm padding */
+    padding: 20px 1rem; /* Thêm padding */
   }
 
   .content-left .line-highlight {
@@ -1139,61 +1257,51 @@
 
 
 @media screen and (max-width: 376px) {
-  .main-header {
-    width: 100%;         /* luôn chiếm đủ chiều ngang */
-    padding: 0.5rem 1rem; /* giảm padding */
-    min-height: 50px;
-    align-items: center;
-    box-sizing: border-box; /* đảm bảo padding tính trong width */
-    overflow-x: hidden;     /* ngăn tràn ngang */
-  }
-  .logo_techzen {
-    width: 60%; /* Chiếm hết chiều ngang */
-  
-  }
-  .logo_techzen img{
-    max-width: 50%;
-    height: auto;
-  }
   .menu-toggle {
+    display: block;
     font-size: 20px;
-    
- 
   }
-  .btn-signup{
-    width: 130%;
-    height: 130%;
-  }
-  .btn-signup h1{
-    font-size: 10px;
-  }
-
   .nav-menu {
-    gap: 0.5rem;       /* giảm gap */
-    flex-wrap: wrap;   /* cho xuống hàng khi hẹp */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 180px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(232, 244, 250);
+    border-radius: 0 10px 10px 0;
+    padding: 6px 0;
+  }
+  .nav-menu.show {
+   transform: translateX(0) ;
+  opacity: 1;
+  pointer-events: auto;
+
+}
+
+  .nav-menu-list {
+   
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
 
-  .icon-social {
-    margin-left: 0;    /* bỏ margin âm gây tràn */
-    gap: 0.5rem;
+  .nav-menu-list .nav-item div,
+  .nav-menu-list .nav-item-focus div {
+    width: 100%;
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 0.85rem;
   }
-
-  .btn-signup {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-    min-width: auto;   /* bỏ min-width cứng nếu gây tràn */
-  }
-
-  .nav-menu,
-  .icon {
+  .icon{
     display: none;
   }
-
   /* Nội dung chính */
   .main-content {
     flex-direction: column;
     gap: 8px; /* Giảm từ 10px */
-    margin-top: 60px; /* Giảm từ 72px */
+    margin-top: 80px; /* Giảm từ 72px */
     height: unset;
     width: 100%;
     padding: 1.5rem 0.5rem 40px; /* Thêm padding để tránh sát mép */
