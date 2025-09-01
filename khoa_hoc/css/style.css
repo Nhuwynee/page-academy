@@ -106,17 +106,11 @@
 }
 
 .nav-item div:hover {
-  background-color: #87c0fd;
-  color: black;
-  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
 }
 
-/* Nav item focus */
-.nav-menu-list .nav-item-focus {
-  list-style: none;
-}
-
-.nav-item-focus div {
+.focus div {
   background-color: #87c0fd;
   font-size: 12px;
   font-weight: 700;
@@ -515,49 +509,93 @@
    MEDIA QUERY CHUẨN RESPONSIVE
 =========================================== */
 @media screen and (max-width: 1280px) {
-  .nav-menu {
-    display: flex;
-    gap: 20px;
-    background-color: rgb(232, 244, 250);
-    border-radius: 20px;
-    padding: 10px 0;
-  }
-  .menu-toggle {
-    display: block;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 0px 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-    height: 40px;
-    margin-left: -100px;
-  }
-  .menu-toggle:hover {
-    background-color: #1b5bb5;
-  }
-  .icon-social {
-    right: 20%;
-    gap: 10px;
-    margin-bottom: 2px;
-  }
-  .nav-item {
-    display: none;
-  }
-  .nav-item-focus {
-    display: none;
-  }
+/* Nav-menu dạng overlay ẩn phía trên */
+.nav-menu {
+  position: fixed;
+  top: -100%;               /* Ẩn phía trên */
+  left: 0;
+  width: 100vw;             /* Chiếm toàn màn hình ngang */
+  background: rgb(232, 244, 250);
+  border-radius: 0 0 20px 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;   /* menu chính xếp dọc */
+  align-items: flex-start;
+  gap: 15px;
+  transition: top 0.4s ease-in-out;
+  z-index: 1;
+}
 
-  .navbar {
-    padding: 5px 6px;
-    height: auto;
-  }
-  .main-header {
-    height: 80px;
-  }
+/* Khi bấm menu-toggle thêm class .show */
+.nav-menu.show {
+  top: 80px; /* trượt xuống ngay dưới header */
+}
+
+.nav-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;   /* 🔥 xếp dọc */
+  width: 100%;
+  gap: 15px;                /* khoảng cách giữa các item */
+}
+
+.nav-menu .nav-item {
+  display: block;       /* mỗi item chiếm 1 dòng */
+  width: 100%;          /* chiếm hết chiều ngang menu */
+  padding: 12px 0;
+  text-align: left;     /* canh chữ sang trái */
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-menu .nav-item:hover {
+  color: #1b5bb5;       /* đổi màu chữ khi hover */
+}
+
+/* Nút toggle menu */
+.menu-toggle {
+  display: flex;
+  align-items: center;   /* canh giữa icon trong khung */
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  height: 40px;
+  margin: 0 auto;        /* canh giữa ngang */
+  margin-left: -100px;
+}
+
+
+.menu-toggle:hover {
+  background-color: #1b5bb5;
+  color: #fff;
+}
+
+/* Icon social */
+.icon-social {
+  right: 20%;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+/* Navbar & header */
+.navbar {
+  padding: 5px 6px;
+  height: auto;
+}
+
+.main-header {
+  height: 80px;
+}
+
   .content-left,
   .content-right {
     padding: 35px;
@@ -1188,6 +1226,7 @@
   }
   .menu-toggle {
     font-size: 20px;
+    margin-left: -200px !important;
   }
   .btn-signup {
     width: 130%;
@@ -1385,6 +1424,8 @@
     justify-content: center;
   }
 }
+
+/* minh-end */
 
 /* minh-end */
 

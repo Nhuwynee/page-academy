@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSignup  = document.querySelector(".btn-signup");
   const btnSignup2 = document.querySelector(".btn-primary");
   const btnSignup3 = document.querySelector(".btn-outline");
-  const navItemFocus = document.querySelector(".nav-item-focus");
+  const navItemFocus = document.querySelector(".focus");
   const promoSection = document.querySelector(".promo-register-right");
+  const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
   // Hàm scroll với easing tùy chỉnh
   const smoothScrollTo = (targetY, duration = 1000) => {
@@ -99,4 +101,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (navItemFocus) {
     navItemFocus.addEventListener("click", scrollToHeader);
   }
+  if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+
+  // đổi icon ☰ <-> ✖
+  if (menuToggle.textContent === "☰") {
+    menuToggle.textContent = "✖";
+  } else {
+    menuToggle.textContent = "☰";
+  }
 });
+}});

@@ -40,7 +40,7 @@
     <!-- Minh -->
     <header>
       <!-- minh-start -->
-      <
+      
       <div class="main-header">
         <nav class="navbar">
           <ul class="navbar-list">
@@ -54,7 +54,7 @@
                 <li class="nav-item">
                   <div>GIỚI THIỆU</div>
                 </li>
-                <li class="nav-item-focus">
+                <li class="nav-item focus">
                   <div>
                     <span>KHÓA HỌC</span>
                     <img src="/img/ArrowDropDown.svg" alt="" />
@@ -101,16 +101,16 @@
       <main class="main-content">
         <!-- Bên trái -->
         <div class="content-left">
-          <h1 class="line-highlight">
+          <h1 class="line-highlight" id="title">
             Trở thành Fullstack Developer trong 6 tháng
           </h1>
-          <p class="description">
+          <p class="description" id="description">
             Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội
             tuyển dụng tại Techzen
           </p>
           <div class="course-info">
-            <span>📅 16 buổi</span>
-            <span>💻 Offline tại văn phòng techzen</span>
+            <span id="sessions">📅 16 buổi</span>
+            <span id="mode">💻 Offline tại văn phòng techzen</span>
           </div>
         </div>
 
@@ -152,6 +152,7 @@
           </div>
         </div>
       </main>
+
       <!-- minh-end -->
     </header>
 
@@ -778,4 +779,6 @@
   <script src="js/handleStep.js"></script>
   <script src="js/handleBtnSMAndCollapse.js"></script>
   <script src="js/handleMaskEffect.js"></script>
+   <script type="module" src="js/mainLoading.js"></script>
+
 </html>
