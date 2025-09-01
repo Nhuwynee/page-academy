@@ -308,6 +308,10 @@
     text-decoration: none;
 }
 
+.viewMoreBtn a:hover {
+    color: #0066e2;
+}
+
 .nav-btn {
   background: #e0e7ff;
   border: none;
