@@ -31,9 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   select.addEventListener("change", () => {
     const targetValue = select.value;
+    let matched = false;
+
     radios.forEach((radio) => {
-      radio.checked = radio.value === targetValue;
+      if (radio.value === targetValue) {
+        radio.checked = true;
+        matched = true;
+      } else {
+        radio.checked = false;
+      }
     });
+
+    if (!matched) {
+      radios.forEach((radio) => (radio.checked = false));
+    }
   });
 
   const dayInput = document.querySelectorAll(".day");

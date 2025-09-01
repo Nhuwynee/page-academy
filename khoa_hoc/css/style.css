@@ -106,8 +106,9 @@
 }
 
 .nav-item div:hover {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #87c0fd;
+  color: black;
+  font-weight: bold;
 }
 
 /* Nav item focus */
