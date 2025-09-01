@@ -54,7 +54,7 @@
                 <li class="nav-item">
                   <div>GIỚI THIỆU</div>
                 </li>
-                <li class="nav-item focus">
+                <li class="nav-item-focus">
                   <div>
                     <span>KHÓA HỌC</span>
                     <img src="/img/ArrowDropDown.svg" alt="" />
@@ -193,7 +193,6 @@
                   Lộ trình tinh gọn, tập trung hands-on và business-driven
                 </li>
               </ul>
-              /
             </div>
             <div class="banner2-top-item">
               <div class="banner2-icon">
@@ -618,10 +617,12 @@
                 <div class="field">
                   <label for="interest">Khóa học quan tâm</label>
                   <select name="interest" id="interest" required>
-                    <option value="" disabled selected></option>
-                    <option value="fullstack">Fullstack Developer</option>
+                    <option value="fullstack" selected>
+                      Fullstack Developer
+                    </option>
                     <option value="java-be">Java Backend</option>
                     <option value="python-ai">Python AI</option>
+                    <option value="sql">SQL</option>
                   </select>
                 </div>
               </div>
@@ -635,6 +636,7 @@
                         name="course"
                         id="fullstack"
                         value="fullstack"
+                        checked
                       />
                       <label for="fullstack" class="option-name">
                         Khóa Fullstack Developer

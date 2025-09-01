@@ -78,7 +78,7 @@
 }
 
 .ps-header::after {
-    content: url("../img/arrow-down.svg");
+    content: url("/img/arrow-down.svg");
     position: absolute;
     right: 20px;
     font-size: 18px;
@@ -90,7 +90,7 @@
 }
 
 .ps-content {
-    padding: 0 20px;
+    padding: 0 20px 0px 55px;
     line-height: 1.5;
     max-height: 0;
     overflow: hidden;
@@ -480,8 +480,8 @@
 
     .ps-content {
         font-size: 14px;
-        padding-left: 20px;
-        margin-top: -15px;
+        /* padding-left: 20px; */
+        /* margin-top: -15px; */
     }
 
     /* target */
@@ -594,7 +594,7 @@
 
     .ps-content {
         font-size: 14px;
-        padding-left: 20px;
+        /* padding-left: 20px; */
         margin-top: -15px;
     }
 
