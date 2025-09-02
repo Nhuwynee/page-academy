@@ -12,9 +12,12 @@ const nav_next = document.querySelector(".navigation .navigation_next");
 const track = document.querySelector(".course-track");
 
 let images = otherCourse.map((course) => ({
+  id : course.id,
   img: course.image,
   title: `Khóa ${course.name}`,
 }));
+
+console.log(images)
 
 // Render cards
 function renderCards() {
@@ -24,6 +27,15 @@ function renderCards() {
     card.classList.add("course-card");
     card.setAttribute("data-index", index);
     card.innerHTML = `<img src="${item.img}" alt="${item.title}"/><p>${item.title}</p>`;
+
+    
+   // Hàm chuyển trang đúng
+    function goDetail() {
+      window.location.href = `/khoa_hoc/index.html?id=${item.id}`;
+    }
+
+    card.addEventListener("click", goDetail);
+
 
     // Thêm sự kiện hover
     card.addEventListener("mouseenter", () => {

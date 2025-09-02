@@ -90,10 +90,9 @@ function renderMainContent() {
   `;
 }
 
-renderMainContent();
-renderBanner();
 
-      // thay nội dung ps-content
+
+// render data skilll
 function renderSkill() {
   const parentSkill = document.querySelector(".ps-accordion"); 
   const skills = parentSkill.querySelectorAll(".ps-item");
@@ -122,4 +121,31 @@ function renderSkill() {
 }
 
 
+function renderDoiTuongHoc() {
+  const targetList = document.querySelector(".tartget-description .target-list"); 
+  const targetItem = targetList.querySelectorAll('li');
+
+  const dataDoiTuong = course.doi_tuong;
+
+
+  targetItem.forEach((item, index) => {
+    if (dataDoiTuong[index]) {
+      item.childNodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          item.removeChild(node);
+        }
+      });
+
+      item.append(" " + dataDoiTuong[index]);
+    }
+
+  });
+
+}
+
+renderMainContent();
+renderBanner();
 renderSkill();
+renderDoiTuongHoc();
+
+
