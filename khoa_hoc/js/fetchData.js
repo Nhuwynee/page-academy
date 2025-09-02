@@ -92,3 +92,34 @@ function renderMainContent() {
 
 renderMainContent();
 renderBanner();
+
+      // thay nội dung ps-content
+function renderSkill() {
+  const parentSkill = document.querySelector(".ps-accordion"); 
+  const skills = parentSkill.querySelectorAll(".ps-item");
+
+  const dataSkills = course.ky_nang_nhan_duoc;
+
+  skills.forEach((item, index) => {
+    const header = item.querySelector(".ps-header");
+    const content = item.querySelector(".ps-content"); 
+
+
+  if (dataSkills[index]) {
+    header.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        header.removeChild(node);
+      }
+    });
+
+    header.append(" " + dataSkills[index].name);
+
+    content.textContent = dataSkills[index].content;
+  }
+
+
+  });
+}
+
+
+renderSkill();
