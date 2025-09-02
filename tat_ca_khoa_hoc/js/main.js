@@ -29,7 +29,7 @@ function renderCourse(course) {
   card.className = "course-card";
 
   card.innerHTML = `
-      <img src="${course.image}" alt="${course.name}" />
+      <img src="${course.image}" alt="${course.name}" class="course-thumb"/>
       <div class="course-content">
         <h3>Khóa ${course.name}</h3>
         <p>${course.description}</p>
@@ -50,9 +50,13 @@ function renderCourse(course) {
   meta.appendChild(createMeta(iconClock, `${course.so_buoi_hoc} buổi`));
   meta.appendChild(createMeta(iconPin, `${course.address}`));
 
-  card.querySelector(".btn").addEventListener("click", () => {
+  // Hàm chuyển trang chung
+  function goDetail() {
     window.location.href = `/khoa_hoc/index.html?id=${course.id}`;
-  });
+  }
+
+  card.querySelector(".btn").addEventListener("click", goDetail);
+  card.querySelector(".course-thumb").addEventListener("click", goDetail);
 
   return card;
 }
