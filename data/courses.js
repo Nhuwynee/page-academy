@@ -16,7 +16,7 @@ let all_courses = [
     price_sale: 22500000,
     so_buoi_hoc: 16,
     ly_do_hoc: {
-      lo_trinh: [
+      lo_trinh_toan_dien: [
         "Từ Core đến DevOps",
         "Kết nối chuyên gia & PM Techzen học hỏi kinh nghiệm thực tế",
         "Môi trường đào tạo thực tế sử dụng server và codebase của Techzen",
@@ -432,6 +432,23 @@ let all_courses = [
     price: 25000000,
     price_sale: 12000000,
     so_buoi_hoc: 12,
+    ly_do_hoc: {
+      lo_trinh_toan_dien: [
+        "Từ Core đến DevOps",
+        "Kết nối chuyên gia & PM Techzen học hỏi kinh nghiệm thực tế.",
+        "Môi trường đào tạo thực tế sử dụng server và codebase của Techzen",
+      ],
+      ho_tro_hoc_vien: [
+        "Ưu tiên tuyển dụng",
+        "Định hướng nghề nghiệp 1-1",
+        "Lộ trình tinh gọn, tập trung hands-on và business-driven",
+      ],
+      gia_tri_lau_dai: [
+        "Nâng cao chuyên môn từ Fresher lên Junior",
+        "Mở rộng kiến thức fullstack, tăng cơ hội việc làm",
+        "Trải nghiệm quy trình dự án chuẩn Agile",
+      ],
+    },
     lo_trinh: [
       { thoi_gian: "Buổi 1-3", title: "Môi trường, Công cụ cơ bản & Bảo mật" },
       { thoi_gian: "Buổi 4-6", title: "Linux cơ bản, Nginx & Docker" },
@@ -650,7 +667,7 @@ let all_courses = [
     price_sale: 14900000,
     so_buoi_hoc: 32,
     ly_do_hoc: {
-      lo_trinh: [
+      lo_trinh_toan_dien: [
         "Hệ thống kiến thức từ Core đến Spring Boot & Deploy",
         "Học trên codebase thật, tiêu chuẩn doanh nghiệp",
         "Kèm cặp 1-1, review code, luyện test & tối ưu",
@@ -816,9 +833,8 @@ let all_courses = [
     price: 48000000,
     price_sale: 19900000,
     so_buoi_hoc: 20,
-
     ly_do_hoc: {
-      lo_trinh: [
+      lo_trinh_toan_dien: [
         "Python → Phân tích dữ liệu → ML/DL → MLOps",
         "Làm dự án thực tế, review code như doanh nghiệp",
         "Học qua bài tập + mini project mỗi chặng",
