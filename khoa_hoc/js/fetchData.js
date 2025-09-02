@@ -4,7 +4,6 @@ const params = new URLSearchParams(location.search);
 const id = Number(params.get("id"));
 
 const course = all_courses.find((course) => course.id === id);
-const otherCourse = all_courses.filter((course) => course.id !== id);
 
 function renderBanner() {
   const loTrinhToanDien = document.querySelector(".lo-trinh-toan-dien");
