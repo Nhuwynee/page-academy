@@ -17,7 +17,6 @@ let images = otherCourse.map((course) => ({
   title: `Khóa ${course.name}`,
 }));
 
-console.log(images)
 
 // Render cards
 function renderCards() {

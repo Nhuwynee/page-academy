@@ -251,6 +251,7 @@
     overflow: hidden;
     width: 312px;
     padding: 13.5px;
+    cursor: pointer;
 }
 
 .course-card.isShow{
@@ -524,7 +525,7 @@
 
     
     .target-image {
-        width: 120%;
+        width: 100%;
         height: auto;
         margin-bottom: -20%;
     }

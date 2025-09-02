@@ -90,14 +90,13 @@ function renderMainContent() {
   `;
 }
 
-
-
 // render data skilll
 function renderSkill() {
   const parentSkill = document.querySelector(".ps-accordion"); 
   const skills = parentSkill.querySelectorAll(".ps-item");
 
   const dataSkills = course.ky_nang_nhan_duoc;
+  console.log(dataSkills)
 
   skills.forEach((item, index) => {
     const header = item.querySelector(".ps-header");
@@ -108,7 +107,9 @@ function renderSkill() {
     header.childNodes.forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE) {
         header.removeChild(node);
+
       }
+      console.log(node)
     });
 
     header.append(" " + dataSkills[index].name);
