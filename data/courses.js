@@ -10,6 +10,7 @@ let all_courses = [
       "Khóa học này trang bị cho bạn đầy đủ kỹ năng để trở thành một lập trình viên Full-Stack JavaScript toàn diện. Bạn sẽ học cách xây dựng giao diện người dùng (Frontend) hiện đại với React.js và phát triển hệ thống phía máy chủ (Backend) mạnh mẽ với Node.js/Express và MongoDB. Khóa học tập trung vào thực hành qua các dự án thực tế, giúp bạn tự tin xây dựng và triển khai ứng dụng web hoàn chỉnh.",
     durition: "6 tháng",
     address: "Offline tại văn phòng techzen",
+    value: "fullstack",
     mode: "Offline",
     price: 50000000,
     price_sale: 22500000,
@@ -226,6 +227,7 @@ let all_courses = [
       "Từ kiến thức cơ bản đến kỹ thuật truy vấn nâng cao, khóa SQL tại Techzen Academy giúp bạn thành thạo thiết kế, quản lý và tối ưu cơ sở dữ liệu. Học viên được thực hành 80% thời lượng với hệ thống thật, mentor là Tech Lead/PM trực tiếp hướng dẫn, áp dụng quy trình Sprint chuẩn doanh nghiệp. Hoàn thành khóa học, bạn đủ năng lực truy vấn, xử lý và phân tích dữ liệu – kỹ năng không thể thiếu cho lập trình viên, tester, BA hay bất kỳ ai làm việc với dữ liệu.",
     durition: "3 tháng",
     address: "Offline tại văn phòng Techzen",
+    value: "sql",
     mode: "Offline",
     price: 20000000,
     price_sale: 9500000,
@@ -425,6 +427,7 @@ let all_courses = [
       "Khóa học DevOps thực chiến giúp học viên hiểu rõ quy trình CI/CD, sử dụng các công cụ như Git, Docker, Jenkins, và tích hợp với AWS. Chương trình tập trung vào tự động hóa triển khai, giám sát và vận hành hệ thống phần mềm theo chuẩn doanh nghiệp. Cung cấp kiến thức cơ bản và nâng cao về cài đặt, cấu hình và triển khai server. 70% thời lượng dành cho thực hành, giúp học viên tự tay triển khai môi trường thực tế.",
     durition: "3 tháng",
     address: "Offline tại văn phòng Techzen",
+    value: "devops",
     mode: "Offline",
     price: 25000000,
     price_sale: 12000000,
@@ -641,6 +644,7 @@ let all_courses = [
       "Khóa học này trang bị cho bạn đầy đủ kỹ năng để trở thành một lập trình viên Full-Stack JavaScript toàn diện. Bạn sẽ học cách xây dựng giao diện người dùng (Frontend) hiện đại với React.js và phát triển hệ thống phía máy chủ (Backend) mạnh mẽ với Node.js/Express và MongoDB. Khóa học tập trung vào thực hành qua các dự án thực tế, giúp bạn tự tin xây dựng và triển khai ứng dụng web hoàn chỉnh.",
     durition: "4 tháng",
     address: "Offline tại văn phòng Techzen",
+    value: "java-be",
     mode: "Offline",
     price: 28000000,
     price_sale: 14900000,
@@ -794,6 +798,159 @@ let all_courses = [
       "Fresher muốn nâng cấp lên Junior qua dự án thực chiến",
       "QA/BA muốn hiểu sâu API, DB, Security để phối hợp team",
       "Doanh nghiệp cần đào tạo đội ngũ backend chuẩn quy trình",
+    ],
+  },
+  {
+    id: 5,
+    name: "Python AI",
+    image: "../img/course-2.png",
+    title: "Trở thành Python Developer trong 5 tháng",
+    subtitle:
+      "Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội tuyển dụng tại Techzen",
+    description:
+      "Khóa học Python AI toàn diện giúp bạn làm chủ ngôn ngữ lập trình phổ biến nhất hiện nay, từ nền tảng cơ bản đến ứng dụng AI. Tập trung vào thực hành và dự án thực tế, phù hợp cho cả người mới bắt đầu và lập trình viên muốn nâng cao kỹ năng.",
+    durition: "5 tháng",
+    address: "Hybrid: Online + Lab tại Techzen",
+    value: "python-ai",
+    mode: "Hybrid",
+    price: 48000000,
+    price_sale: 19900000,
+    so_buoi_hoc: 20,
+
+    ly_do_hoc: {
+      lo_trinh: [
+        "Python → Phân tích dữ liệu → ML/DL → MLOps",
+        "Làm dự án thực tế, review code như doanh nghiệp",
+        "Học qua bài tập + mini project mỗi chặng",
+      ],
+      ho_tro_hoc_vien: [
+        "Mentor 1-1 theo tuần, giải đáp nhanh",
+        "Hỗ trợ CV, portfolio, mock interview",
+        "Tài nguyên dataset & template dự án chuẩn",
+      ],
+      gia_tri_lau_dai: [
+        "Nắm vững tư duy dữ liệu và mô hình hoá",
+        "Biết triển khai model thành sản phẩm",
+        "Xây dựng hồ sơ năng lực với capstone mạnh",
+      ],
+    },
+    lo_trinh: [
+      { thoi_gian: "Tuần 1-4", title: "Python & Data Analysis" },
+      { thoi_gian: "Tuần 5-8", title: "SQL & Data Wrangling" },
+      { thoi_gian: "Tuần 9-12", title: "Machine Learning" },
+      { thoi_gian: "Tuần 13-16", title: "Deep Learning & NLP" },
+      { thoi_gian: "Tuần 17-20", title: "Capstone & MLOps" },
+    ],
+
+    lo_trinh_chi_tiet: [
+      {
+        thoi_gian: "Tuần 1-4",
+        sologan: "Vững Python – Làm chủ dữ liệu",
+        noi_dung_chi_tiet: [
+          "Python cơ bản, kiểu dữ liệu, hàm, OOP nhẹ",
+          "NumPy, Pandas: xử lý, tổng hợp, làm sạch",
+          "EDA: trực quan hoá với Matplotlib",
+          "Feature engineering cơ bản",
+          "Quy trình bài toán dữ liệu end-to-end (mini project)",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: [
+            "Git/GitHub workflow",
+            "Viết notebook chuẩn",
+            "Code style & logging",
+          ],
+          kien_thuc: [
+            "Shell cơ bản",
+            "Quản lý môi trường venv/conda",
+            "Tối ưu I/O với Pandas",
+          ],
+        },
+      },
+      {
+        thoi_gian: "Tuần 5-8",
+        sologan: "Data wrangling từ SQL đến file system",
+        noi_dung_chi_tiet: [
+          "SQL căn–nâng: JOIN, window, CTE",
+          "Kết nối DB từ Python (psycopg2/SQLAlchemy)",
+          "Làm sạch & hợp nhất dữ liệu đa nguồn",
+          "Tạo dataset train/val/test, data validation",
+          "Mini project: pipeline lấy dữ liệu → dataset",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Viết truy vấn tối ưu", "Profiling dữ liệu"],
+          kien_thuc: ["Chuẩn hoá schema nhẹ", "Indexing cơ bản cho phân tích"],
+        },
+      },
+      {
+        thoi_gian: "Tuần 9-12",
+        sologan: "Machine Learning thực chiến",
+        noi_dung_chi_tiet: [
+          "Scikit-learn: pipeline, transformer, model",
+          "Hồi quy, phân loại, clustering",
+          "Cross-validation, tuning (Grid/Random/Optuna)",
+          "Đánh giá mô hình, tránh overfitting",
+          "Tracking thí nghiệm (MLflow nhẹ)",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Feature selection", "Xử lý mất cân bằng dữ liệu"],
+          kien_thuc: ["Metrics (AUC/F1/RMSE)", "Interpretable ML (SHAP)"],
+        },
+      },
+      {
+        thoi_gian: "Tuần 13-16",
+        sologan: "Deep Learning & NLP khởi động nhanh",
+        noi_dung_chi_tiet: [
+          "PyTorch cơ bản: tensor, autograd, module",
+          "CNN cho ảnh, augmentation",
+          "NLP cơ bản: tokenization, word embeddings",
+          "Fine-tune mô hình sẵn (Transformers) cho phân loại",
+          "Quản lý checkpoint & early stopping",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Tối ưu training (LR schedule, regularization)"],
+          kien_thuc: ["Hardware basics (GPU/VRAM)", "Dataloader hiệu quả"],
+        },
+      },
+      {
+        thoi_gian: "Tuần 17-20",
+        sologan: "Capstone & MLOps – đưa model ra đời",
+        noi_dung_chi_tiet: [
+          "Thiết kế đề tài capstone theo bài toán thật",
+          "Đóng gói model: FastAPI/Streamlit",
+          "Docker hoá & deploy (Render/railway/VPS)",
+          "Monitoring cơ bản, logging & versioning",
+          "Demo & phản biện với mentor/PM",
+        ],
+        ky_nang_bo_tro: {
+          ky_nang: ["Viết README/ báo cáo kỹ thuật", "Pitch dự án"],
+          kien_thuc: [
+            "CI/CD nhẹ với GitHub Actions",
+            "Best practices bảo mật API",
+          ],
+        },
+      },
+    ],
+    ky_nang_nhan_duoc: [
+      {
+        name: "Kỹ năng Python & Dữ liệu",
+        content:
+          "Thành thạo Pandas/NumPy, EDA, xử lý dữ liệu thực tế, viết pipeline sạch và tái sử dụng.",
+      },
+      {
+        name: "ML/DL thực chiến",
+        content:
+          "Xây dựng, đánh giá, tuning mô hình ML; nắm PyTorch và fine-tune mô hình có sẵn cho NLP/vision.",
+      },
+      {
+        name: "MLOps & Triển khai",
+        content:
+          "Đóng gói model thành dịch vụ (API/UI), container hoá, deploy và theo dõi hoạt động.",
+      },
+    ],
+    doi_tuong: [
+      "Sinh viên CNTT hoặc người chuyển ngành muốn vào mảng AI/ML",
+      "Lập trình viên cần bổ sung kỹ năng dữ liệu & mô hình hoá",
+      "Bạn tự học AI cần lộ trình có mentor và dự án thực chiến",
     ],
   },
 ];

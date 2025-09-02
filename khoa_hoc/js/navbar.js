@@ -98,9 +98,9 @@ const navMenu = document.querySelector(".nav-menu");
     });
   }
   
-  if (navItemFocus) {
-    navItemFocus.addEventListener("click", scrollToHeader);
-  }
+  // if (navItemFocus) {
+  //   navItemFocus.addEventListener("click", scrollToHeader);
+  // }
   if (menuToggle && navMenu) {
   menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("show");

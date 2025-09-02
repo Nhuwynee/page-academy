@@ -1,3 +1,5 @@
+import all_courses from "../../data/courses.js";
+
 // Như
 document.addEventListener("DOMContentLoaded", function () {
   const accordionItems = document.querySelectorAll(".ps-item");
@@ -86,4 +88,24 @@ document.addEventListener("DOMContentLoaded", function () {
     minuteInput.forEach((minute) => setContent(minute, minutes));
     secondInput.forEach((second) => setContent(second, seconds));
   }, 1000);
+
+  //  get data promo register
+  const data = all_courses;
+  const selectPromo = document.getElementById("interest");
+
+  function renderPromo(course) {
+    const option = document.createElement("option");
+    option.value = course.value;
+    option.textContent = `Khóa ${course.name}`;
+
+    if (option.value === "fullstack") {
+      option.selected = true;
+    }
+
+    return option;
+  }
+
+  const frag = document.createDocumentFragment();
+  data.forEach((course) => frag.appendChild(renderPromo(course)));
+  selectPromo.replaceChildren(frag);
 });
