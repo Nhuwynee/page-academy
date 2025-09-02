@@ -1,10 +1,8 @@
-import img from "../img/course-1.png";
-
 let all_courses = [
   {
     id: 1,
     name: "Fullstack Developer",
-    image: img,
+    image: "../img/course-1.png",
     title: "Trở thành Fullstack Developer trong 6 tháng",
     subtitle:
       "Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội tuyển dụng tại Techzen",
@@ -220,7 +218,7 @@ let all_courses = [
   {
     id: 2,
     name: "SQL",
-    image: img,
+    image: "../img/course-2.png",
     title: "SQL THỰC CHIẾN - LÀM CHỦ CƠ SỞ DỮ LIỆU CHỈ SAU 1 THÁNG",
     subtitle:
       "Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội tuyển dụng tại Techzen",
@@ -420,7 +418,7 @@ let all_courses = [
   {
     id: 3,
     name: "DevOps",
-    image: img,
+    image: "../img/course-3.png",
     title: "KHÓA HỌC DEVOPS THỰC CHIẾN",
     subtitle: "Cài đặt và Cấu hình Server Cài đặt và Cấu hình Server",
     description:
@@ -635,7 +633,7 @@ let all_courses = [
   {
     id: 4,
     name: "Java Backend",
-    image: img,
+    image: "../img/course-1.png",
     title: "Trở thành Backend Developer trong 6 tháng",
     subtitle:
       "Thực hành cùng chuyên gia – Làm việc trên codebase thật – Cơ hội tuyển dụng tại Techzen",
