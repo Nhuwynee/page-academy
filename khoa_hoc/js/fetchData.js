@@ -2,7 +2,6 @@ import all_courses from "../../data/courses.js";
 
 const params = new URLSearchParams(location.search);
 const id = Number(params.get("id"));
-
 const course = all_courses.find((course) => course.id === id);
 
 function vnd(n) {
@@ -90,44 +89,104 @@ function renderMainContent() {
   `;
 }
 
-// render data skilll
-function renderSkill() {
-  const parentSkill = document.querySelector(".ps-accordion"); 
-  const skills = parentSkill.querySelectorAll(".ps-item");
+function renderRoadmap() {
+  if (!course) return;
 
-  const dataSkills = course.ky_nang_nhan_duoc;
-  console.log(dataSkills)
+  // Lấy phần tử hiển thị nội dung từ roadmap-1 & roadmap-2
+  const timelineSteps = document.querySelector(".roadmap-1 .timeline");
+  const timelineDetail = document.querySelector(".roadmap-2 .timeline");
 
-  skills.forEach((item, index) => {
-    const header = item.querySelector(".ps-header");
-    const content = item.querySelector(".ps-content"); 
+  // Lấy phần tử timeline-title
+  const timelineTitle = document.getElementById("timeline-title");
+  timelineTitle.textContent = course.tieu_de_lo_trinh;
 
+  // Render step bên roadmap-1
+  timelineSteps.innerHTML = "";
+  course.lo_trinh.forEach((item, idx) => {
+    const btn = document.createElement("div");
+    btn.classList.add("btn-timeline");
+    btn.innerHTML = `
+      <div class="step ${idx === 0 ? "active" : ""}" data-index="${idx}">
+        ${item.thoi_gian}
+      </div>
+      <div class="desc">${item.title}</div>
+    `;
+    timelineSteps.appendChild(btn);
 
-  if (dataSkills[index]) {
-    header.childNodes.forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        header.removeChild(node);
+    if (idx < course.lo_trinh.length - 1) {
+      timelineSteps.innerHTML += `
+        <div class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" fill="none">
+            <path d="M0 20L10 10L0 0L0 20Z" fill="#CBD5E1"/>
+          </svg>
+        </div>
+      `;
+    }
+  });
 
-      }
-      console.log(node)
-    });
-
-    header.append(" " + dataSkills[index].name);
-
-    content.textContent = dataSkills[index].content;
-  }
-
-
+  // Render detail bên roadmap-2
+  timelineDetail.innerHTML = "";
+  course.lo_trinh_chi_tiet.forEach((item, idx) => {
+    const detail = document.createElement("div");
+    detail.classList.add("timeline-item");
+    detail.id = `week${idx + 1}`;
+    detail.innerHTML = `
+      <div class="timeline-left">
+        <h3>${item.thoi_gian}</h3>
+        <strong>${item.sologan}</strong>
+        <br/><br/>
+        <img src="${item.hinh_anh}" alt="Lớp học"/>
+      </div>
+      <div class="timeline-right">
+        <h3>Nội dung học chi tiết:</h3>
+        <ul class="aligned-list">
+          ${item.noi_dung_chi_tiet.map((d) => `<li>${d}</li>`).join("")}
+        </ul>
+        <br/>
+        <h3>Kỹ năng bổ trợ:</h3>
+        <ul class="aligned-list">
+          ${item.ky_nang_bo_tro.ky_nang.map((k) => `<li>${k}</li>`).join("")}
+        </ul>
+      </div>
+    `;
+    timelineDetail.appendChild(detail);
   });
 }
 
+// render data skilll
+function renderSkill() {
+  const parentSkill = document.querySelector(".ps-accordion");
+  const skills = parentSkill.querySelectorAll(".ps-item");
+
+  const dataSkills = course.ky_nang_nhan_duoc;
+  // console.log(dataSkills)
+
+  skills.forEach((item, index) => {
+    const header = item.querySelector(".ps-header");
+    const content = item.querySelector(".ps-content");
+
+    if (dataSkills[index]) {
+      header.childNodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          header.removeChild(node);
+        }
+        // console.log(node)
+      });
+
+      header.append(" " + dataSkills[index].name);
+
+      content.textContent = dataSkills[index].content;
+    }
+  });
+}
 
 function renderDoiTuongHoc() {
-  const targetList = document.querySelector(".tartget-description .target-list"); 
-  const targetItem = targetList.querySelectorAll('li');
+  const targetList = document.querySelector(
+    ".tartget-description .target-list"
+  );
+  const targetItem = targetList.querySelectorAll("li");
 
   const dataDoiTuong = course.doi_tuong;
-
 
   targetItem.forEach((item, index) => {
     if (dataDoiTuong[index]) {
@@ -139,14 +198,11 @@ function renderDoiTuongHoc() {
 
       item.append(" " + dataDoiTuong[index]);
     }
-
   });
-
 }
 
 renderMainContent();
 renderBanner();
 renderSkill();
 renderDoiTuongHoc();
-
-
+renderRoadmap();
