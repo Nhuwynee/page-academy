@@ -261,7 +261,8 @@
 
 .course-card img {
     width: 100%;
-    height: auto;
+    height: 85%;
+    border-radius: 10px;
     display: block;
 }
 
