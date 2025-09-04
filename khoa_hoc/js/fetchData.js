@@ -43,7 +43,7 @@ function renderMainContent() {
           ${course.title}
         </h1>
         <p class="description" id="description">
-          ${course.subtitle}
+          ${course.description}
         </p>
         <div class="course-info">
           <span id="sessions">📅 ${course.so_buoi_hoc} buổi</span>
