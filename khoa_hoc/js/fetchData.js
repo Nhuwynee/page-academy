@@ -130,6 +130,18 @@ function renderRoadmap() {
     const detail = document.createElement("div");
     detail.classList.add("timeline-item");
     detail.id = `week${idx + 1}`;
+
+    let kyNangBoTro = "";
+    if (item.ky_nang_bo_tro && item.ky_nang_bo_tro.ky_nang.length > 0) {
+      kyNangBoTro = `
+      <br/>
+      <h3>Kỹ năng bổ trợ:</h3>
+      <ul class="aligned-list">
+        ${item.ky_nang_bo_tro.ky_nang.map((k) => `<li>${k}</li>`).join("")}
+      </ul>
+    `;
+    }
+
     detail.innerHTML = `
       <span class="week-label">${item.thoi_gian}</span>
       <div class="timeline-left">
@@ -144,10 +156,7 @@ function renderRoadmap() {
           ${item.noi_dung_chi_tiet.map((d) => `<li>${d}</li>`).join("")}
         </ul>
         <br/>
-        <h3>Kỹ năng bổ trợ:</h3>
-        <ul class="aligned-list">
-          ${item.ky_nang_bo_tro.ky_nang.map((k) => `<li>${k}</li>`).join("")}
-        </ul>
+        ${kyNangBoTro}
       </div>
     `;
     timelineDetail.appendChild(detail);

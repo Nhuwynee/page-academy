@@ -1630,14 +1630,13 @@
 /* Bên trái */
 .timeline-left {
   width: 45%;
-  padding-right: 30px;
 }
 
 .timeline-left h3 {
   color: var(--Sys-On-surface-on-surface-sub, #475569);
   font-feature-settings: "liga" off, "clig" off;
   font-family: var(--font-Inter, Inter);
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
@@ -1648,7 +1647,7 @@
   color: var(--Sys-On-surface-on-surface, #1e293b);
   font-feature-settings: "liga" off, "clig" off;
   font-family: var(--font-Inter, Inter);
-  font-size: 19px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -1661,8 +1660,8 @@
   left: 10px;
   border-radius: 50%;
   margin-top: 40px;
-  width: 340px;
-  height: 340px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   flex-shrink: 0;
   aspect-ratio: 74/75;
@@ -1671,10 +1670,14 @@
 /* Bên phải */
 .timeline-right {
   width: 45%;
-  padding-left: 30px;
+  padding-left: 60px;
   text-align: left;
   mask: linear-gradient(to bottom, black 70%, transparent 100%);
   -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.timeline-right h3 {
+  font-size: 17px;
 }
 
 /* Bỏ hiệu ứng mask khi expanded */
@@ -1689,13 +1692,13 @@
 }
 
 .aligned-list {
-  list-style: none;
   padding-left: 0;
+  list-style-position: inside;
 }
 
 .aligned-list li {
-  padding-left: 0;
   line-height: 1.6;
+  font-size: 15px;
 }
 
 h3 {
@@ -1752,7 +1755,7 @@ strong {
 
 .roadmap-2 .timeline-item {
   scroll-behavior: smooth;
-  scroll-margin-top: 165px;
+  scroll-margin-top: 205px;
 }
 
 .roadmap-2 .timeline.collapsed .timeline-item:not(:first-child) {
@@ -1766,6 +1769,6 @@ strong {
 .roadmap-2 .timeline {
   overflow: hidden;
   transition: max-height 0.6s ease-in-out;
-  max-height: 4100px;
+  /* max-height: none; */
   scroll-margin-top: 120px;
 }
