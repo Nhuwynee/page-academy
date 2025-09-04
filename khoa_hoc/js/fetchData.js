@@ -131,6 +131,7 @@ function renderRoadmap() {
     detail.classList.add("timeline-item");
     detail.id = `week${idx + 1}`;
     detail.innerHTML = `
+      <span class="week-label">${item.thoi_gian}</span>
       <div class="timeline-left">
         <h3>${item.thoi_gian}</h3>
         <strong>${item.sologan}</strong>
@@ -151,6 +152,19 @@ function renderRoadmap() {
     `;
     timelineDetail.appendChild(detail);
   });
+
+  // Loại bỏ week label
+  let css = "";
+  for (let i = 1; i <= 5; i++) {
+    css += `
+    .timeline-item:nth-child(${i})::after {
+      content: none !important;
+      }
+      `;
+  }
+  const style = document.createElement("style");
+  style.innerHTML = css;
+  document.head.appendChild(style);
 }
 
 // render data skilll
