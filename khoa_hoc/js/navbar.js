@@ -1,3 +1,4 @@
+// ...existing code...
 document.addEventListener("DOMContentLoaded", () => {
   const btnSignup  = document.querySelector(".btn-signup");
   const btnSignup2 = document.querySelector(".btn-primary");
@@ -5,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navItemFocus = document.querySelector(".focus");
   const promoSection = document.querySelector(".promo-register-right");
   const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-menu");
+  const navMenu = document.querySelector(".nav-menu");
 
   // Hàm scroll với easing tùy chỉnh
   const smoothScrollTo = (targetY, duration = 1000) => {
@@ -58,12 +59,6 @@ const navMenu = document.querySelector(".nav-menu");
     }
   };
 
-  // Scroll về đầu trang
-  const scrollToHeader = (e) => {
-    e?.preventDefault();
-    smoothScrollTo(0, 800); // 0.8 giây
-  };
-
   // Thêm loading state cho buttons
   const addLoadingEffect = (button) => {
     if (button) {
@@ -98,18 +93,87 @@ const navMenu = document.querySelector(".nav-menu");
     });
   }
   
-  // if (navItemFocus) {
-  //   navItemFocus.addEventListener("click", scrollToHeader);
-  // }
-  if (menuToggle && navMenu) {
-  menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
+ if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
 
-  // đổi icon ☰ <-> ✖
-  if (menuToggle.textContent === "☰") {
-    menuToggle.textContent = "✖";
-  } else {
-    menuToggle.textContent = "☰";
+      // đổi icon ☰ <-> ✖
+      if (menuToggle.textContent === "☰") {
+        menuToggle.textContent = "✖";
+      } else {
+        menuToggle.textContent = "☰";
+      }
+    });
   }
+
+  // --- NEW: fade-in cho .main-content ---
+  const mainContent = document.querySelector('.main-content');
+  if (mainContent) {
+    // Respect user reduced-motion preference
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      mainContent.classList.add('is-visible');
+    } else {
+      const rect = mainContent.getBoundingClientRect();
+      // Nếu đã nằm gần viewport thì show ngay
+      if (rect.top < window.innerHeight * 0.9) {
+        // thêm một chút delay cho mượt
+        setTimeout(() => requestAnimationFrame(() => mainContent.classList.add('is-visible')), 120);
+      } else {
+        // Ngược lại: quan sát khi scrolled vào view
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 }); // sửa từ 4.0 -> 0.08
+        io.observe(mainContent);
+      }
+    }
+  }
+// hiệu ứng roll hiển thị các phần tử khi scroll
+// ...existing code...
+  const scrollFadeElements = document.querySelectorAll('.scroll-fade');
+
+  // helper: tính tỉ lệ phần tử đang visible theo chiều cao (0..1)
+  const getVisibleRatio = (rect) => {
+    const elHeight = rect.height || (rect.bottom - rect.top);
+    if (!elHeight) return 0;
+    const visibleTop = Math.max(rect.top, 0);
+    const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    return visibleHeight / elHeight;
+  };
+
+  // handle both scroll down and up: add .is-visible when >=30% visible, remove otherwise
+  const handleScrollFade = () => {
+    scrollFadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const ratio = getVisibleRatio(rect);
+      if (ratio >= 0.3) {
+        el.classList.add('is-visible');
+      } else {
+        el.classList.remove('is-visible');
+      }
+    });
+  };
+
+  // throttle with rAF for performance
+  let scheduled = false;
+  const onScrollOrResize = () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(() => {
+        handleScrollFade();
+        scheduled = false;
+      });
+    }
+  };
+
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+  // Trigger once on load
 });
-}});
+// ...existing code...

@@ -24,9 +24,12 @@ const iconPin = `
   <path d="M8.00033 9.16634C9.10489 9.16634 10.0003 8.27091 10.0003 7.16634C10.0003 6.06177 9.10489 5.16634 8.00033 5.16634C6.89576 5.16634 6.00033 6.06177 6.00033 7.16634C6.00033 8.27091 6.89576 9.16634 8.00033 9.16634Z" stroke="#64748B" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`.trim();
 
-function renderCourse(course) {
+function renderCourse(course, index) {
   const card = document.createElement("div");
   card.className = "course-card";
+  
+  // Thêm độ trễ animation dựa trên index
+  card.style.animationDelay = `${index * 0.1}s`;
 
   card.innerHTML = `
       <img src="${course.image}" alt="${course.name}" class="course-thumb"/>
@@ -37,9 +40,7 @@ function renderCourse(course) {
         <div class="course-action">
           <div class="course-price">
             <span class="new-price">${vnd(course.price_sale)}</span>
-            <span class="old-price" style="text-decoration:line-through; opacity:.7">${vnd(
-              course.price
-            )}</span>
+            <span class="old-price">${vnd(course.price)}</span>
           </div>
           <button class="btn" type="button">Xem chi tiết</button>
         </div>
@@ -61,6 +62,19 @@ function renderCourse(course) {
   return card;
 }
 
-const frag = document.createDocumentFragment();
-data.forEach((course) => frag.appendChild(renderCourse(course)));
-listElement.replaceChildren(frag);
+// Render các khóa học với hiệu ứng tuần tự
+function renderCoursesWithAnimation() {
+  const frag = document.createDocumentFragment();
+  data.forEach((course, index) => {
+    frag.appendChild(renderCourse(course, index));
+  });
+  listElement.replaceChildren(frag);
+}
+
+// Gọi hàm render khi trang được tải
+document.addEventListener('DOMContentLoaded', renderCoursesWithAnimation);
+
+// Fallback nếu DOM đã được tải sẵn
+if (document.readyState !== 'loading') {
+  renderCoursesWithAnimation();
+}

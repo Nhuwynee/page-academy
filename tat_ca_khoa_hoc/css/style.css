@@ -62,10 +62,14 @@ body {
   flex-direction: column;
   transition: transform 0.3s ease;
   cursor: pointer;
+  /* Hiệu ứng xuất hiện */
+  transform: scale(0.9);
+  opacity: 0;
+  animation: scaleIn 0.6s forwards;
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
 }
 
 .course-card img {
@@ -123,6 +127,7 @@ body {
 .course-action {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .course-price {
@@ -146,7 +151,6 @@ body {
 .old-price {
   color: var(--Sys-On-surface-on-surface-sub, #475569);
   font-feature-settings: "liga" off, "clig" off;
-
   font-family: var(--font-Inter, Inter);
   font-size: 12px;
   font-style: normal;
@@ -167,6 +171,7 @@ body {
   font-size: 14px;
   transition: background 0.3s ease;
   height: 40px;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -179,6 +184,18 @@ body {
 
 .promo-register {
   margin-bottom: 0px;
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Pagination */

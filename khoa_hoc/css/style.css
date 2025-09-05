@@ -14,6 +14,23 @@
 }
 
 /* minh-start */
+/* animation roll the div */
+/* fade-on-scroll */
+.scroll-fade {
+    opacity: 0; /* nếu muốn hoàn toàn ẩn thì đổi thành 0 */
+    transform: translateY(30px) scale(0.98);
+    filter: blur(1px);
+    transition: opacity 1200ms cubic-bezier(0.25,0.46,0.45,0.94),
+                transform 1200ms cubic-bezier(0.25,0.46,0.45,0.94),
+                filter 900ms ease; /* thêm filter vào transition */
+    will-change: opacity, transform, filter;
+}
+
+.scroll-fade.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
 .main-header {
   width: 100%;
   background-color: #fff;
@@ -22,7 +39,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 9;
 }
 
 .navbar {
@@ -95,7 +112,7 @@
   border-radius: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
-  color: inherit;
+  color: black;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -104,8 +121,8 @@
 }
 
 .nav-item div:hover {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #87c0fd;
+  color: #000000;
 }
 
 .focus div {
@@ -195,7 +212,16 @@
   /* background: linear-gradient(135deg, #c5dffb, #fcfdff); */
   color: rgb(0, 0, 0);
   position: relative;
-  z-index: 1; /* Đặt z-index để đảm bảo nó nằm trên các phần tử khác */
+  z-index: 0; /* Đặt z-index để đảm bảo nó nằm trên các phần tử khác */
+  /* adimation */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1000ms ease 120ms, transform 1000ms ease 120ms; /* tăng thời gian + thêm delay */
+  will-change: opacity, transform;
+}
+.main-content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .content-left {
