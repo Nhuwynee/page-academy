@@ -210,10 +210,19 @@
 
 /*-------------------------------------------------------- */
 /* Section chứa các khóa học */
+.course_box {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  /* margin-bottom: 280px; */
+}
+
 .course-section {
   max-width: 1552px;
   width: 100%;
   margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .course-section h2,
@@ -226,13 +235,17 @@
 }
 
 .background-course {
+  position: absolute;
+  left: 0;
+  /* top: 50%; */
+  bottom: -70%;
+  width: 100vw;
+  height: 170%;
   background: url("/img/background-courses.png") no-repeat center center;
   background-size: contain;
-  min-height: 400px;
-  z-index: -1;
-  margin-top: -20%;
-  padding: 0;
-  margin-bottom: -7%;
+  
+  z-index: 0;
+  pointer-events: none;
 }
 
 .course-section h2 {
@@ -265,6 +278,8 @@
   width: 312px;
   padding: 13.5px;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .course-card.isShow {

@@ -416,10 +416,11 @@
 }
 /*footer*/
 .footer {
+  position: relative;
+  z-index: 1;
   background-color: #e4ecfb;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
-  margin-top: 60px;
 }
 
 .footer-container {
